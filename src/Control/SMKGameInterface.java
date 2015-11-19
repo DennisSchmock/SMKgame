@@ -1,0 +1,16 @@
+package Control;
+
+import Engine.User;
+import java.util.ArrayList;
+
+public interface SMKGameInterface {
+
+    public void timer();
+    public String randomQuestion();
+    public String load();
+    public void checkGuess();
+    public int size();
+    public void clear();
+    public ArrayList<User> returnRank();
+
+}
