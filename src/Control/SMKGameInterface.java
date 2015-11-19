@@ -12,5 +12,7 @@ public interface SMKGameInterface {
     public int size();
     public void clear();
     public ArrayList<User> returnRank();
+    public String getQuestion();
+    public ArrayList<String> answerOptions();
 
 }

@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Engine;
+package Control;
+import Engine.GameTimer;
 
 /**
  *
  * @author Dennis
  */
-public class GameTimer {
-    
+public class SMKmain {
+   
+    public static void main(String[] args) {
+      
+    }
 }
