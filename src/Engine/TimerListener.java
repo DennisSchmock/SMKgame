@@ -15,10 +15,12 @@ import javax.swing.Timer;
  *
  * @author Dennis
  */
-public class TimerListener extends JLabel implements ActionListener {
+public class TimerListener extends JPanel implements ActionListener {
     Timer timer = new Timer(1000, new TimerListener());
     int elapsedSeconds = 30;
     JLabel timerLabel = new JLabel();
+    
+    
 
     @Override
     public void actionPerformed(ActionEvent evt) {
