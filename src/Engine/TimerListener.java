@@ -20,6 +20,7 @@ public class TimerListener extends JLabel implements ActionListener {
     int elapsedSeconds = 30;
     JLabel timerLabel = new JLabel();
 
+    @Override
     public void actionPerformed(ActionEvent evt) {
         elapsedSeconds--;
         timerLabel.setText("" + elapsedSeconds);
