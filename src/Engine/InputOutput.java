@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -11,15 +12,15 @@ import javax.swing.JLabel;
 public class InputOutput {
 
     BufferedReader read;
-    private static ArrayList<Question> questions;
+    private static ArrayList<Question> questions = new ArrayList();
     File filename;
     
     
-    public InputOutput() {
-
+    
+    public  InputOutput() {
     }
 
-    public boolean load(String filename) {
+    public static boolean load(String filename) {
 
         try {
             FileReader read = new FileReader(filename);
@@ -35,11 +36,13 @@ public class InputOutput {
                 String a2 = s.split(",")[2].trim();
                 String a3 = s.split(",")[3].trim();
                 String a4 = s.split(",")[4].trim();
-                String correct = s.split(",")[5].trim();
+                String number = s.split(",")[5].trim();
+                int correct = parseInt(number);
+                System.out.println(q + a1 +a2+a3+a4+number);
                 //needs to be intialized
                 ImageIcon pic = null;
                 //the object, quiz, should consist of the strings from above
-                Question quest = new Question(q, a1, a2, a3, a4, pic, correct);
+                Question quest = new Question(q, a1, a2, a3, a4, pic, 1);
                 questions.add(quest);
 
             }
@@ -52,18 +55,18 @@ public class InputOutput {
     }
 
     // Not being used.
-    public void useReaderIcon() {
-        ImageIcon image = new ImageIcon("images/image.png");
-        JLabel imageLabel = new JLabel(image);
-        //   frame.add(imageLabel);
+    public static ImageIcon QuestionIcon(String filename) {
+        ImageIcon image = new ImageIcon(filename);
+        return image;
 
     }
 
-    public static ArrayList<Question> loadQuestions(String filename) {
+    public static ArrayList<Question> loadQuestions() {
 
         //Put logic for loading question here
-        questions = new ArrayList();
         return questions;
     }
+    
+   
 
 }
