@@ -19,6 +19,7 @@ public Question(String q, String a1, String a2, String a3, String a4, ImageIcon 
     this.a3 = a3;
     this.a4 = a4;
     this.picture = pic;
+    this.correctAnswer = correct;
     
 }
 

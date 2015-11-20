@@ -212,6 +212,11 @@ public class Smartphone extends javax.swing.JFrame {
         answerButtonA.setBackground(new java.awt.Color(102, 153, 255));
         answerButtonA.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         answerButtonA.setText("Answer A");
+        answerButtonA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                answerButtonAActionPerformed(evt);
+            }
+        });
 
         answerButtonB.setBackground(new java.awt.Color(51, 255, 51));
         answerButtonB.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -439,6 +444,10 @@ public class Smartphone extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         introPanel();
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void answerButtonAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_answerButtonAActionPerformed
+        
+    }//GEN-LAST:event_answerButtonAActionPerformed
 
     /**
      * @param args the command line arguments
