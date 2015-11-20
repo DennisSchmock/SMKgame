@@ -4,9 +4,12 @@ import java.util.ArrayList;
 
 public class Engine {
 
+
     private ArrayList<Question> questions;
  
-    public String returnQuestion() {
+    private Question currentQuestion;
+    
+    public String returnQuestion(){
         return "Haha";
     }
 
@@ -18,7 +21,7 @@ public class Engine {
     public boolean checkGuess(String currentQuestion, int correct) {
         for (int i = 0; i < questions.size(); i++) {
             if (questions.get(i).getQuestion().equals(currentQuestion)) {
-                if (questions.get(i).getCorrectAnswer() == correct) {
+                if (questions.get(i).getCorrect() == correct) {
                     return true;
                 }
             }

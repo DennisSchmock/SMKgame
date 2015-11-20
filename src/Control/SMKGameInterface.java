@@ -8,11 +8,11 @@ public interface SMKGameInterface {
     public void timer();
     public String randomQuestion();
     public String load();
-    public void checkGuess();
+    public boolean checkGuess();
     public int size();
     public void clear();
     public ArrayList<User> returnRank();
     public String getQuestion();
-    public ArrayList<String> answerOptions();
+    public String[] answerOptions();
 
 }

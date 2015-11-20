@@ -5,6 +5,7 @@
  */
 package Control;
 
+import Engine.Engine;
 import Engine.User;
 import java.util.ArrayList;
 
@@ -13,6 +14,8 @@ import java.util.ArrayList;
  * @author Dennis
  */
 public class SMKGame implements SMKGameInterface{
+    
+    Engine engine = new Engine();
 
     @Override
     public void timer() {
@@ -29,8 +32,7 @@ public class SMKGame implements SMKGameInterface{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-   
-    public void checkGuess() {
+    public boolean checkGuess() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -54,9 +56,12 @@ public class SMKGame implements SMKGameInterface{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+   
+
     @Override
-    public ArrayList<String> answerOptions() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String[] answerOptions() {
+        return engine.returnAnswers();
+        
     }
     
 }

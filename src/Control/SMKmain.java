@@ -4,17 +4,30 @@
  * and open the template in the editor.
  */
 package Control;
+import Engine.*;
+import java.util.ArrayList;
 
 /**
  *
  * @author Dennis
  */
 public class SMKmain {
+    
+    
    
     public static void main(String[] args) {
-        System.out.println("adfas");
-        System.out.println("Dennis laver github");
-        System.out.println("Hejhej");
-        System.out.println("swag123");
+        
+        InputOutput io = new InputOutput();
+        
+        ArrayList<Question> al = InputOutput.loadQuestions();
+        
+        for (Question al1 : al) {
+            System.out.println(al1.getPicture());
+            
+        }
+        
+        
+        
+        
     }
 }
