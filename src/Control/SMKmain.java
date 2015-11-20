@@ -14,6 +14,7 @@ public class SMKmain {
     public static void main(String[] args) {
         System.out.println("adfas");
         System.out.println("Dennis laver github");
+        System.out.println("Hejhej");
         System.out.println("swag123");
     }
 }
