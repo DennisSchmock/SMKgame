@@ -1,6 +1,7 @@
 package Engine;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,12 +12,14 @@ public class InputOutput {
 
     BufferedReader read;
     private static ArrayList<Question> questions;
+    File filename;
+    
     
     public InputOutput() {
 
     }
 
-    public boolean load(boolean filename) {
+    public boolean load(String filename) {
 
         try {
             FileReader read = new FileReader(filename);
