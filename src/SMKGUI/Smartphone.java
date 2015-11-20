@@ -1,5 +1,6 @@
 package SMKGUI;
 
+import Control.SMKGame;
 import java.awt.CardLayout;
 
 public class Smartphone extends javax.swing.JFrame {
@@ -7,8 +8,10 @@ public class Smartphone extends javax.swing.JFrame {
     // Fields
     private CardLayout layCard;
     
+    
     // Importing BigScreen GUI
     BigScreen bigscreen = new BigScreen();
+    SMKGame game = new SMKGame();
 
     public Smartphone() {
         initComponents();
@@ -211,7 +214,7 @@ public class Smartphone extends javax.swing.JFrame {
 
         answerButtonA.setBackground(new java.awt.Color(102, 153, 255));
         answerButtonA.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        answerButtonA.setText("Answer A");
+        answerButtonA.setText(game.answerOptions()[0]);
 
         answerButtonB.setBackground(new java.awt.Color(51, 255, 51));
         answerButtonB.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N

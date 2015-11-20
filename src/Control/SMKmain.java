@@ -5,6 +5,7 @@
  */
 package Control;
 import Engine.*;
+import java.util.ArrayList;
 
 /**
  *
@@ -18,19 +19,14 @@ public class SMKmain {
         
         InputOutput io = new InputOutput();
         
-        System.out.println( io.load("fil.txt"));
-        System.out.println();
-        for (Question q : InputOutput.loadQuestions()) {
-            System.out.println(q.getA1());
-            System.out.println(q.getA2());
-            
-            System.out.println(q.getA3());
-            
-            System.out.println(q.getA4());
-        }
-        System.out.println(InputOutput.loadQuestions().get(0));
+        ArrayList<Question> al = InputOutput.loadQuestions();
         
-        //InputOutput.QuestionIcon("Billede1.png");
+        for (Question al1 : al) {
+            System.out.println(al1.getPicture());
+            
+        }
+        
+        
         
         
     }

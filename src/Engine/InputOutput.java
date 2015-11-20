@@ -18,6 +18,7 @@ public class InputOutput {
     
     
     public  InputOutput() {
+        load("fil.txt");
     }
 
     public static boolean load(String filename) {
@@ -36,11 +37,12 @@ public class InputOutput {
                 String a2 = s.split(",")[2].trim();
                 String a3 = s.split(",")[3].trim();
                 String a4 = s.split(",")[4].trim();
+                String imagepath = "/SMKGUI/" + s.split(",")[5].trim();
                 String number = s.split(",")[6].trim();
                 int correct = parseInt(number);
                 System.out.println(q + a1 +a2+a3+a4+correct);
                 //needs to be intialized
-                ImageIcon pic = null;
+                ImageIcon pic = questionIcon(imagepath);
                 //the object, quiz, should consist of the strings from above
                 Question quest = new Question(q, a1, a2, a3, a4, pic, 1);
                 questions.add(quest);
@@ -55,7 +57,7 @@ public class InputOutput {
     }
 
     // Not being used.
-    public static ImageIcon QuestionIcon(String filename) {
+    public static ImageIcon questionIcon(String filename) {
         ImageIcon image = new ImageIcon(filename);
         return image;
 
