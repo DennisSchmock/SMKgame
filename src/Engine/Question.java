@@ -8,17 +8,18 @@ public class Question {
    private String a2;
    private String a3;
    private String a4;
-   private int correctAnswer;
+   private String correctAnswer;
    private ImageIcon picture;
    
    
-public Question(String q, String a1, String a2, String a3, String a4, ImageIcon pic, int correct){
+public Question(String q, String a1, String a2, String a3, String a4, ImageIcon pic, String correct){
     this.question = q;
     this.a1 = a1;
     this.a2 = a2;
     this.a3 = a3;
     this.a4 = a4;
     this.picture = pic;
+    this.correctAnswer = correct;
     
 }
 
@@ -60,7 +61,7 @@ public Question(String q, String a1, String a2, String a3, String a4, ImageIcon 
     /**
      * @return the correctAnswer
      */
-    public int getCorrectAnswer() {
+    public String getCorrect() {
         return correctAnswer;
     }
 
