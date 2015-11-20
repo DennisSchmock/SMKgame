@@ -12,6 +12,6 @@ package Control;
 public class SMKmain {
    
     public static void main(String[] args) {
-      
+        System.out.println("adfas");
     }
 }
