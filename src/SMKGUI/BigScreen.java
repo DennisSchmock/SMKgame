@@ -81,9 +81,14 @@ public class BigScreen extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("The Art Game - Big screen");
+        setPreferredSize(new java.awt.Dimension(1000, 650));
         setSize(new java.awt.Dimension(1000, 650));
 
+        bigMainPanel.setPreferredSize(new java.awt.Dimension(1000, 650));
         bigMainPanel.setLayout(new java.awt.CardLayout());
+
+        bigIntroPanel.setPreferredSize(new java.awt.Dimension(1000, 650));
+        bigIntroPanel.setSize(new java.awt.Dimension(1000, 650));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -161,6 +166,9 @@ public class BigScreen extends javax.swing.JFrame {
 
         bigMainPanel.add(bigIntroPanel, "card2");
 
+        bigWaitingPanel.setPreferredSize(new java.awt.Dimension(1000, 650));
+        bigWaitingPanel.setSize(new java.awt.Dimension(1000, 650));
+
         jLabel6.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("The game will begin shortly");
@@ -214,6 +222,9 @@ public class BigScreen extends javax.swing.JFrame {
         );
 
         bigMainPanel.add(bigWaitingPanel, "card3");
+
+        bigQuestionPanel.setPreferredSize(new java.awt.Dimension(1000, 650));
+        bigQuestionPanel.setSize(new java.awt.Dimension(1000, 650));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -277,6 +288,9 @@ public class BigScreen extends javax.swing.JFrame {
 
         bigMainPanel.add(bigQuestionPanel, "card4");
 
+        bigScorePanel.setPreferredSize(new java.awt.Dimension(1000, 650));
+        bigScorePanel.setSize(new java.awt.Dimension(1000, 650));
+
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("The winner is!");
@@ -336,6 +350,8 @@ public class BigScreen extends javax.swing.JFrame {
         );
 
         bigMainPanel.add(bigScorePanel, "card5");
+
+        bigRankingPanel.setPreferredSize(new java.awt.Dimension(1000, 650));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
