@@ -36,9 +36,9 @@ public class InputOutput {
                 String a2 = s.split(",")[2].trim();
                 String a3 = s.split(",")[3].trim();
                 String a4 = s.split(",")[4].trim();
-                String number = s.split(",")[5].trim();
+                String number = s.split(",")[6].trim();
                 int correct = parseInt(number);
-                System.out.println(q + a1 +a2+a3+a4+number);
+                System.out.println(q + a1 +a2+a3+a4+correct);
                 //needs to be intialized
                 ImageIcon pic = null;
                 //the object, quiz, should consist of the strings from above

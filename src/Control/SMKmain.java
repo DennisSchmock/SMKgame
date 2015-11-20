@@ -30,7 +30,7 @@ public class SMKmain {
         }
         System.out.println(InputOutput.loadQuestions().get(0));
         
-        InputOutput.QuestionIcon("Billede1.png");
+        //InputOutput.QuestionIcon("Billede1.png");
         
         
     }
