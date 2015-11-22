@@ -25,7 +25,7 @@ public class SMKmain {
             System.out.println(al1.getPicture());
             
         }
-        
+        System.out.println("test");
         
         
         
