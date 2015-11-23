@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
+import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -14,10 +15,8 @@ public class InputOutput {
     BufferedReader read;
     public static ArrayList<Question> questions = new ArrayList();
     File filename;
-    
-    
-    
-    public  InputOutput() {
+
+    public InputOutput() {
         load("fil.txt");
     }
 
@@ -66,7 +65,4 @@ public class InputOutput {
         //Put logic for loading question here
         return questions;
     }
-    
-   
-
 }

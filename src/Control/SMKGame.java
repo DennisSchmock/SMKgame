@@ -10,6 +10,7 @@ import Engine.InputOutput;
 import Engine.Question;
 import Engine.User;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
@@ -17,6 +18,8 @@ import java.util.ArrayList;
  */
 public class SMKGame implements SMKGameInterface {
 
+    private static Random rnd = new Random();
+    private Question lastShownQuestion;
     Engine engine = new Engine();
     ArrayList<Question> questions = InputOutput.loadQuestions();
 
@@ -27,7 +30,11 @@ public class SMKGame implements SMKGameInterface {
 
     @Override
     public String randomQuestion() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int randomRangeUpperLimit = size();
+        int randomNumber = rnd.nextInt(randomRangeUpperLimit);
+        Question question = questions.get(randomNumber);
+        lastShownQuestion = question;
+        return question.getQuestion();
     }
 
     @Override
@@ -35,18 +42,18 @@ public class SMKGame implements SMKGameInterface {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public boolean checkGuess(String q, int correct) {
-        for (int i = 0; i < questions.size(); i++) {
-            if (questions.get(i).getQuestion().equals(q) && questions.get(i).getCorrect() == correct) {
-                return true;
-            }
+    @Override
+    public boolean checkGuess(int correct) {
+        if (lastShownQuestion.getCorrect() == correct) {
+            return true;
+        } else {
+            return false;
         }
-        return false;
     }
 
     @Override
     public int size() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return questions.size();
     }
 
     @Override
