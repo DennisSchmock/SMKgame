@@ -12,7 +12,7 @@ import javax.swing.JLabel;
 public class InputOutput {
 
     BufferedReader read;
-    private static ArrayList<Question> questions = new ArrayList();
+    public static ArrayList<Question> questions = new ArrayList();
     File filename;
     
     
@@ -22,7 +22,6 @@ public class InputOutput {
     }
 
     public static boolean load(String filename) {
-
         try {
             FileReader read = new FileReader(filename);
             BufferedReader r = new BufferedReader(read);
@@ -40,11 +39,11 @@ public class InputOutput {
                 String imagepath = "/SMKGUI/" + s.split(",")[5].trim();
                 String number = s.split(",")[6].trim();
                 int correct = parseInt(number);
-                System.out.println(q + a1 +a2+a3+a4+correct);
+                System.out.println(q + " " + a1 + " " + a2 + " " + a3 + " " + a4 + " " + correct);
                 //needs to be intialized
                 ImageIcon pic = questionIcon(imagepath);
                 //the object, quiz, should consist of the strings from above
-                Question quest = new Question(q, a1, a2, a3, a4, pic, 1);
+                Question quest = new Question(q, a1, a2, a3, a4, pic, correct);
                 questions.add(quest);
 
             }
@@ -64,7 +63,6 @@ public class InputOutput {
     }
 
     public static ArrayList<Question> loadQuestions() {
-
         //Put logic for loading question here
         return questions;
     }

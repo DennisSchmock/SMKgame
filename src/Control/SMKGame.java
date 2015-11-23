@@ -55,9 +55,7 @@ public class SMKGame implements SMKGameInterface{
     public String getQuestion() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
    
-
     @Override
     public String[] answerOptions() {
         return engine.returnAnswers();
