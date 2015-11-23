@@ -1,8 +1,10 @@
 package Control;
 
 import Engine.Engine;
+import Engine.InputOutput;
 import Engine.Question;
 import SMKGUI.Smartphone;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -26,13 +28,18 @@ public class GUI_For_Queing {
     private static boolean gameBool = true;
     private static Smartphone smartphone;
     private static ArrayList<Question> questions;
-    private Engine engine = new Engine();
+    //private Engine engine = new Engine();
+    
 
     public static void main(String[] args) {
         // Smartphone GUI
         countUp = 0;
         smartphone = new Smartphone();
         smartphone.setVisible(true);
+        InputOutput.load("fil.txt");
+        questions = InputOutput.loadQuestions();
+        System.out.println(questions);
+        
 
         theTimer();
 
@@ -60,11 +67,22 @@ public class GUI_For_Queing {
                     smartphone.answerPanel();
                     smartphone.jProgressBar3.setMaximum(countUser);
                     smartphone.jProgressBar3.setValue(countUser - (countUp - countIntro - countAnswer));
-
+                    smartphone.bigscreen.jLabel11.setText(questions.get(0).getQuestion());
+                    smartphone.answerButtonA.setText(questions.get(0).getA1());
+                    smartphone.answerButtonB.setText(questions.get(0).getA2());
+                    smartphone.answerButtonC.setText(questions.get(0).getA3());
+                    smartphone.answerButtonD.setText(questions.get(0).getA4());
+                    smartphone.bigscreen.jLabel13.setIcon(questions.get(0).getPicture());
                 } else if (countUp <= countUser + countIntro + countAnswer*numberQ) {
                     smartphone.answerPanel();
                     smartphone.jProgressBar3.setMaximum(countUser);
                     smartphone.jProgressBar3.setValue(countUser - (countUp - countIntro - countAnswer*numberQ));
+                    smartphone.bigscreen.jLabel11.setText(questions.get(1).getQuestion());
+                    smartphone.answerButtonA.setText(questions.get(1).getA1());
+                    smartphone.answerButtonB.setText(questions.get(1).getA2());
+                    smartphone.answerButtonC.setText(questions.get(1).getA3());
+                    smartphone.answerButtonD.setText(questions.get(1).getA4());
+                    smartphone.bigscreen.jLabel13.setIcon(questions.get(1).getPicture());
 
                 } else if (countUp <= countUser + countIntro + countAnswer*numberQ+ countScore) {
 

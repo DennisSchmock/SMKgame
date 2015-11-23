@@ -10,7 +10,7 @@ public class Smartphone extends javax.swing.JFrame {
     
     
     // Importing BigScreen GUI
-    BigScreen bigscreen = new BigScreen();
+    public BigScreen bigscreen = new BigScreen();
     SMKGame game = new SMKGame();
 
     public Smartphone() {
@@ -511,10 +511,10 @@ public class Smartphone extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton answerButtonA;
-    private javax.swing.JButton answerButtonB;
-    private javax.swing.JButton answerButtonC;
-    private javax.swing.JButton answerButtonD;
+    public javax.swing.JButton answerButtonA;
+    public javax.swing.JButton answerButtonB;
+    public javax.swing.JButton answerButtonC;
+    public javax.swing.JButton answerButtonD;
     private javax.swing.JPanel answerPanel;
     private javax.swing.JPanel introPanel;
     private javax.swing.JButton jButton1;
