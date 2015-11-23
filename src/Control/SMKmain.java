@@ -16,10 +16,7 @@ public class SMKmain {
 
     public static void main(String[] args) {
 
-        InputOutput io = new InputOutput();
-        Engine eng = new Engine();
-
-        ArrayList<Question> al = InputOutput.loadQuestions();
+        SMKGame test = new SMKGame();
         
         /*for (Question al1 : al) {
             System.out.println(al1.getQuestion());
@@ -29,6 +26,6 @@ public class SMKmain {
         }
         System.out.println("test");*/
         
-        System.out.println(eng.checkGuess("what year is", 2));
+        System.out.println(test.checkGuess("what year is", 2));
     }
 }
