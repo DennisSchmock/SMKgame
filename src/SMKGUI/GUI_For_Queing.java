@@ -6,9 +6,5 @@ public class GUI_For_Queing {
         // Smartphone GUI
         Smartphone smartphone = new Smartphone();
         smartphone.setVisible(true);
-        
-        // BigScreen GUI
-        BigScreen bigscreen = new BigScreen();
-        bigscreen.setVisible(true);
     }
 }
