@@ -8,7 +8,7 @@ public interface SMKGameInterface {
     public void timer();
     public String randomQuestion();
     public String load();
-    public boolean checkGuess();
+    public boolean checkGuess(String q, int correct);
     public int size();
     public void clear();
     public ArrayList<User> returnRank();
