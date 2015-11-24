@@ -15,5 +15,6 @@ public interface SMKGameInterface {
     public String[] answerOptions();
     public void setPoints(int points);
     public int getPoints();
+    public void pushAnswerButton(int i, User user);
 
 }
