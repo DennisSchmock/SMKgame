@@ -31,6 +31,7 @@ public class SMKmain {
         smartphone = new Smartphone(user);
         smartphone.setVisible(true);
         io.load("fil.txt");
+        
         InputOutput.shuffleQuestions();
         
 
