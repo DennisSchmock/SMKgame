@@ -56,4 +56,8 @@ public class SMKGame implements SMKGameInterface {
     public int getPoints() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    public void startGame(){
+        Engine.theTimer();
+    }
 }

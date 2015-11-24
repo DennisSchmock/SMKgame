@@ -9,8 +9,6 @@ public class User {
     private ImageIcon picture;
     private int score;
     private int tempAnswer;
-    Engine engine = new Engine();
-    SMKGame smk = new SMKGame();
 
     public User() {
 

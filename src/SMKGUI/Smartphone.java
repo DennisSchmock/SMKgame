@@ -36,6 +36,7 @@ public class Smartphone extends javax.swing.JFrame {
         answerButtonB.setForeground(Color.BLACK);
         answerButtonC.setForeground(Color.BLACK);
         answerButtonD.setForeground(Color.BLACK);
+        answerPanel.requestFocus();
     }
 
     public void introPanel() {
@@ -68,19 +69,22 @@ public class Smartphone extends javax.swing.JFrame {
     private void initComponents() {
 
         mainPanel = new javax.swing.JPanel();
+        StartGame = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         introPanel = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
         jProgressBar1 = new javax.swing.JProgressBar();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         userPanel = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         nameLabel = new javax.swing.JLabel();
         jProgressBar2 = new javax.swing.JProgressBar();
         jLabel6 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
         answerPanel = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         answerButtonA = new javax.swing.JButton();
@@ -88,17 +92,14 @@ public class Smartphone extends javax.swing.JFrame {
         answerButtonC = new javax.swing.JButton();
         answerButtonD = new javax.swing.JButton();
         jProgressBar3 = new javax.swing.JProgressBar();
-        jButton3 = new javax.swing.JButton();
         scorePanel = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jProgressBar4 = new javax.swing.JProgressBar();
         scoreLabel = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
         rankingPanel = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jProgressBar5 = new javax.swing.JProgressBar();
-        jButton5 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -111,14 +112,49 @@ public class Smartphone extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(400, 600));
 
         mainPanel.setPreferredSize(new java.awt.Dimension(400, 600));
+        mainPanel.setSize(new java.awt.Dimension(400, 600));
         mainPanel.setLayout(new java.awt.CardLayout());
 
-        jButton2.setText("jButton2");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        StartGame.setBackground(new java.awt.Color(255, 255, 255));
+        StartGame.setSize(new java.awt.Dimension(400, 600));
+
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SMKGUI_pics/header_logo.png"))); // NOI18N
+
+        jButton1.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        jButton1.setText("Click to join game");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
+
+        javax.swing.GroupLayout StartGameLayout = new javax.swing.GroupLayout(StartGame);
+        StartGame.setLayout(StartGameLayout);
+        StartGameLayout.setHorizontalGroup(
+            StartGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(StartGameLayout.createSequentialGroup()
+                .addGroup(StartGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(StartGameLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel16))
+                    .addGroup(StartGameLayout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(jButton1)))
+                .addContainerGap(78, Short.MAX_VALUE))
+        );
+        StartGameLayout.setVerticalGroup(
+            StartGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(StartGameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 397, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        mainPanel.add(StartGame, "card7");
+
+        introPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         jProgressBar1.setToolTipText("");
         jProgressBar1.setValue(100);
@@ -138,6 +174,8 @@ public class Smartphone extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Thank you for downloading the app and supporting SMK");
 
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SMKGUI_pics/header_logo.png"))); // NOI18N
+
         javax.swing.GroupLayout introPanelLayout = new javax.swing.GroupLayout(introPanel);
         introPanel.setLayout(introPanelLayout);
         introPanelLayout.setHorizontalGroup(
@@ -153,35 +191,30 @@ public class Smartphone extends javax.swing.JFrame {
                         .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(introPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton2)))
+                        .addComponent(jLabel17)))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
         introPanelLayout.setVerticalGroup(
             introPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, introPanelLayout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jLabel17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
+                .addGap(55, 55, 55)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
-                .addGap(209, 209, 209)
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(244, 244, 244)
                 .addComponent(jLabel4)
                 .addContainerGap())
         );
 
         mainPanel.add(introPanel, "card2");
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        userPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -196,19 +229,22 @@ public class Smartphone extends javax.swing.JFrame {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SMKGUI_pics/Icon1.png"))); // NOI18N
 
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SMKGUI_pics/header_logo.png"))); // NOI18N
+
         javax.swing.GroupLayout userPanelLayout = new javax.swing.GroupLayout(userPanel);
         userPanel.setLayout(userPanelLayout);
         userPanelLayout.setHorizontalGroup(
             userPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-            .addComponent(nameLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(userPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(userPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jProgressBar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(nameLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(userPanelLayout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addGroup(userPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel18))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -216,14 +252,14 @@ public class Smartphone extends javax.swing.JFrame {
             userPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(userPanelLayout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jLabel18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
-                .addComponent(nameLabel)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel6)
-                .addGap(81, 81, 81)
-                .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(nameLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53)
                 .addComponent(jProgressBar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -278,13 +314,6 @@ public class Smartphone extends javax.swing.JFrame {
         jProgressBar3.setToolTipText("");
         jProgressBar3.setValue(100);
 
-        jButton3.setText("jButton3");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout answerPanelLayout = new javax.swing.GroupLayout(answerPanel);
         answerPanel.setLayout(answerPanelLayout);
         answerPanelLayout.setHorizontalGroup(
@@ -292,10 +321,7 @@ public class Smartphone extends javax.swing.JFrame {
             .addGroup(answerPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(answerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
-                    .addGroup(answerPanelLayout.createSequentialGroup()
-                        .addComponent(jButton3)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
                     .addComponent(jProgressBar3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(answerPanelLayout.createSequentialGroup()
@@ -322,9 +348,7 @@ public class Smartphone extends javax.swing.JFrame {
                 .addGroup(answerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(answerButtonD, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(answerButtonC, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(126, 126, 126)
-                .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(167, 167, 167)
                 .addComponent(jProgressBar3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -345,13 +369,6 @@ public class Smartphone extends javax.swing.JFrame {
         scoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         scoreLabel.setText("Insert score here");
 
-        jButton4.setText("jButton4");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout scorePanelLayout = new javax.swing.GroupLayout(scorePanel);
         scorePanel.setLayout(scorePanelLayout);
         scorePanelLayout.setHorizontalGroup(
@@ -361,11 +378,8 @@ public class Smartphone extends javax.swing.JFrame {
             .addGroup(scorePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(scorePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
-                    .addComponent(jProgressBar4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(scorePanelLayout.createSequentialGroup()
-                        .addComponent(jButton4)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
+                    .addComponent(jProgressBar4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         scorePanelLayout.setVerticalGroup(
@@ -377,9 +391,7 @@ public class Smartphone extends javax.swing.JFrame {
                 .addComponent(jLabel10)
                 .addGap(119, 119, 119)
                 .addComponent(scoreLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 210, Short.MAX_VALUE)
-                .addComponent(jButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 250, Short.MAX_VALUE)
                 .addComponent(jProgressBar4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -391,13 +403,6 @@ public class Smartphone extends javax.swing.JFrame {
         jLabel9.setText("Ranking");
 
         jProgressBar5.setValue(100);
-
-        jButton5.setText("jButton5");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -428,11 +433,8 @@ public class Smartphone extends javax.swing.JFrame {
                 .addGroup(rankingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
                     .addComponent(jProgressBar5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(rankingPanelLayout.createSequentialGroup()
-                        .addComponent(jButton5)
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -453,9 +455,7 @@ public class Smartphone extends javax.swing.JFrame {
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel15)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 295, Short.MAX_VALUE)
-                .addComponent(jButton5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 330, Short.MAX_VALUE)
                 .addComponent(jProgressBar5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -467,18 +467,6 @@ public class Smartphone extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        answerPanel();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        userPanel();
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        scorePanel();
-    }//GEN-LAST:event_jButton3ActionPerformed
-
     private void answerButtonBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_answerButtonBActionPerformed
  
         game.pushAnswerButton(2, user);
@@ -487,14 +475,6 @@ public class Smartphone extends javax.swing.JFrame {
         answerButtonC.setForeground(Color.LIGHT_GRAY);
         answerButtonA.setForeground(Color.LIGHT_GRAY);
     }//GEN-LAST:event_answerButtonBActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        rankingPanel();
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        introPanel();
-    }//GEN-LAST:event_jButton5ActionPerformed
 
     private void answerButtonAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_answerButtonAActionPerformed
         game.pushAnswerButton(1, user);
@@ -519,6 +499,12 @@ public class Smartphone extends javax.swing.JFrame {
         answerButtonC.setForeground(Color.LIGHT_GRAY);
         answerButtonA.setForeground(Color.LIGHT_GRAY);
     }//GEN-LAST:event_answerButtonDActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        game.startGame();
+        introPanel();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -555,6 +541,7 @@ public class Smartphone extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel StartGame;
     public javax.swing.JButton answerButtonA;
     public javax.swing.JButton answerButtonB;
     public javax.swing.JButton answerButtonC;
@@ -562,10 +549,6 @@ public class Smartphone extends javax.swing.JFrame {
     private javax.swing.JPanel answerPanel;
     private javax.swing.JPanel introPanel;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -573,6 +556,9 @@ public class Smartphone extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

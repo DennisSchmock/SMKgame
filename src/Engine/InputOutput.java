@@ -14,13 +14,13 @@ import javax.swing.JLabel;
 public class InputOutput {
 
     BufferedReader read;
-    public static ArrayList<Question> questions;
-    public static ArrayList<User> users;
+    private static ArrayList<Question> questions;
+    private static ArrayList<User> users;
     File filename;
 
     public InputOutput() {
         load("fil.txt");
-        userLoad("filen.txt");
+        userLoad("users.txt");
     }
 
     public boolean load(String filename) {
@@ -85,8 +85,6 @@ public class InputOutput {
                 ImageIcon picture = questionIcon(imagepath);
                 User user = new User(name, picture);               
                 users.add(user);
-                System.out.println(user.getName());
-                System.out.println(user.getPicture());
 
             }
 
@@ -112,6 +110,7 @@ public class InputOutput {
     }
     
     public static void shuffleUsers(){
-        Collections.shuffle(users);
+        Random rand = new Random();
+        Collections.shuffle(users, rand);
     }
 }

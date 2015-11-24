@@ -1,0 +1,10 @@
+Mona Lisa,Icon1.png
+Picasso,Icon2.png
+Van Gogh,Icon3.png
+Chagall,Icon4.png
+Matisse,Icon5.png
+Monet,Icon6.png
+Da Vinci,Icon7.png
+Michelangelo,Icon8.png
+Frida Kahlo,Icon9.png
+Salvador Dali,Icon10.png
