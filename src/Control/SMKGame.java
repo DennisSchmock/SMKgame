@@ -30,15 +30,7 @@ public class SMKGame implements SMKGameInterface {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public int size() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void clear() {
-        questions.clear();
-    }
+    
 
     @Override
     public ArrayList<User> returnRank() {

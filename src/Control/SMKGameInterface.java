@@ -9,8 +9,6 @@ public interface SMKGameInterface {
     public String randomQuestion(); //done
     public String load(); //done
     public boolean checkGuess(int correct); //done
-    public int size(); //done
-    public void clear();
     public ArrayList<User> returnRank();
     public String[] answerOptions();
     public void setPoints(int points);

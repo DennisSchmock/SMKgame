@@ -409,8 +409,8 @@ public class BigScreen extends javax.swing.JFrame {
     public javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     public javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
+    public javax.swing.JLabel jLabel14;
+    public javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -424,10 +424,10 @@ public class BigScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JProgressBar jProgressBar1;
-    private javax.swing.JProgressBar jProgressBar2;
-    private javax.swing.JProgressBar jProgressBar3;
-    private javax.swing.JProgressBar jProgressBar4;
-    private javax.swing.JProgressBar jProgressBar5;
+    public javax.swing.JProgressBar jProgressBar1;
+    public javax.swing.JProgressBar jProgressBar2;
+    public javax.swing.JProgressBar jProgressBar3;
+    public javax.swing.JProgressBar jProgressBar4;
+    public javax.swing.JProgressBar jProgressBar5;
     // End of variables declaration//GEN-END:variables
 }

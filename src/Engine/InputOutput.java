@@ -39,7 +39,7 @@ public class InputOutput {
                 String a2 = s.split(",")[2].trim();
                 String a3 = s.split(",")[3].trim();
                 String a4 = s.split(",")[4].trim();
-                String imagepath = "/SMKGUI/" + s.split(",")[5].trim();
+                String imagepath = "/SMKGUI_pics/" + s.split(",")[5].trim();
                 String number = s.split(",")[6].trim();
                 int correct = parseInt(number);
                 
@@ -82,7 +82,7 @@ public class InputOutput {
                 }
                 // words a seperated by the comma in the textfile
                 String name = s.split(",")[0].trim();
-                String imagepath = "/SMKGUI.newpackage/" + s.split(",")[1].trim();
+                String imagepath = "/SMKGUI_pics/" + s.split(",")[1].trim();
                 ImageIcon picture = questionIcon(imagepath);
                 User user = new User(name, picture);               
                 userName.add(user);

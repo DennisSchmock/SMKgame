@@ -1,4 +1,5 @@
-Who painted this picture?,en,to,tre,fire,btn_appstore.png,2
-Who is the famous actor?,one,two,three,four,Billede1.png,3
-Who am I?,Mig,Dig,Du,Osvald,Billede1.png,2
-Who are you?,me,you,I,Hugu,Billede1.png,2
+When was the painting “De søgende” from?,1958,1920,2001,1467,Pic1.png,1
+What kind of art was there most of between 1900-1930 on the museum?,Europæisk kunst,Nordisk kunst,Fransk kunst,Dansk kunst,Pic2.png,3
+This image represents the portrait of?,Christian I,Christian II,Frederick I,Frederick II,Pic3.png,2
+Lucas Cranach the Elder painted a portrait of his German friend - who was it?,Martin Luther King,Angela Merkel,Martin Luther,Albert Einstein,Pic4.png,3
+In the painting by Emil Nolde Christ and his disciples are having The Last?,Meeting,Dinner,Praying,Supper,Pic5.png,4

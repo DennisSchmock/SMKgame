@@ -333,7 +333,7 @@ public class Smartphone extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Pick an answer!");
+        jLabel8.setText("Total Score!");
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -589,7 +589,7 @@ public class Smartphone extends javax.swing.JFrame {
     private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JPanel rankingPanel;
-    private javax.swing.JLabel scoreLabel;
+    public javax.swing.JLabel scoreLabel;
     private javax.swing.JPanel scorePanel;
     private javax.swing.JPanel userPanel;
     // End of variables declaration//GEN-END:variables
