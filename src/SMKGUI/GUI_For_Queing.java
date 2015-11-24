@@ -28,6 +28,7 @@ public class GUI_For_Queing {
     private static boolean gameBool = true;
     private static Smartphone smartphone;
     private static ArrayList<Question> questions;
+    private static Question currentQuestion;
     //private Engine engine = new Engine();
     
 
@@ -51,9 +52,7 @@ public class GUI_For_Queing {
 
             @Override
             public void actionPerformed(ActionEvent event) {
-                countUp++;
-                System.out.println(countIntro);
-                System.out.println(countUp);
+                countUp++;            
                 if (countUp <= countIntro) {
                     smartphone.jProgressBar1.setMaximum(countIntro);
                     smartphone.jProgressBar1.setValue(countIntro - countUp);
@@ -64,25 +63,27 @@ public class GUI_For_Queing {
                     smartphone.jProgressBar2.setValue(countUser - (countUp - countIntro));
 
                 } else if (countUp <= countUser + countIntro + countAnswer) {
+                    currentQuestion = questions.get(0);
                     smartphone.answerPanel();
                     smartphone.jProgressBar3.setMaximum(countUser);
                     smartphone.jProgressBar3.setValue(countUser - (countUp - countIntro - countAnswer));
                     smartphone.bigscreen.jLabel11.setText(questions.get(0).getQuestion());
-                    smartphone.answerButtonA.setText(questions.get(0).getA1());
-                    smartphone.answerButtonB.setText(questions.get(0).getA2());
-                    smartphone.answerButtonC.setText(questions.get(0).getA3());
-                    smartphone.answerButtonD.setText(questions.get(0).getA4());
-                    smartphone.bigscreen.jLabel13.setIcon(questions.get(0).getPicture());
+                    smartphone.answerButtonA.setText(currentQuestion.getA1());
+                    smartphone.answerButtonB.setText(currentQuestion.getA2());
+                    smartphone.answerButtonC.setText(currentQuestion.getA3());
+                    smartphone.answerButtonD.setText(currentQuestion.getA4());
+                    smartphone.bigscreen.jLabel13.setIcon(currentQuestion.getPicture());
                 } else if (countUp <= countUser + countIntro + countAnswer*numberQ) {
+                    currentQuestion = questions.get(1);
                     smartphone.answerPanel();
                     smartphone.jProgressBar3.setMaximum(countUser);
                     smartphone.jProgressBar3.setValue(countUser - (countUp - countIntro - countAnswer*numberQ));
-                    smartphone.bigscreen.jLabel11.setText(questions.get(1).getQuestion());
-                    smartphone.answerButtonA.setText(questions.get(1).getA1());
-                    smartphone.answerButtonB.setText(questions.get(1).getA2());
-                    smartphone.answerButtonC.setText(questions.get(1).getA3());
-                    smartphone.answerButtonD.setText(questions.get(1).getA4());
-                    smartphone.bigscreen.jLabel13.setIcon(questions.get(1).getPicture());
+                    smartphone.bigscreen.jLabel11.setText(currentQuestion.getQuestion());
+                    smartphone.answerButtonA.setText(currentQuestion.getA1());
+                    smartphone.answerButtonB.setText(currentQuestion.getA2());
+                    smartphone.answerButtonC.setText(currentQuestion.getA3());
+                    smartphone.answerButtonD.setText(currentQuestion.getA4());
+                    smartphone.bigscreen.jLabel13.setIcon(currentQuestion.getPicture());
 
                 } else if (countUp <= countUser + countIntro + countAnswer*numberQ+ countScore) {
 

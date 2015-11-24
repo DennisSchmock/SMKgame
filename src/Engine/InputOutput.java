@@ -13,7 +13,7 @@ import javax.swing.JLabel;
 public class InputOutput {
 
     BufferedReader read;
-    public static ArrayList<Question> questions = new ArrayList();
+    public static ArrayList<Question> questions;
     File filename;
 
     public InputOutput() {
@@ -21,6 +21,7 @@ public class InputOutput {
     }
 
     public static boolean load(String filename) {
+        questions = new ArrayList<>();
         try {
             FileReader read = new FileReader(filename);
             BufferedReader r = new BufferedReader(read);
