@@ -27,18 +27,14 @@ public class GUI_For_Queing {
     private static int countUp;
     private static boolean gameBool = true;
     private static Smartphone smartphone;
- //   private static ArrayList<Question> questions;
     private static Question currentQuestion;
-    //private Engine engine = new Engine();
 
     public static void main(String[] args) {
-        // Smartphone GUI
         countUp = 0;
         smartphone = new Smartphone();
         smartphone.setVisible(true);
         InputOutput.load("fil.txt");
-       // questions = InputOutput.loadQuestions();
-       // System.out.println(questions);
+       
 
         theTimer();
 
