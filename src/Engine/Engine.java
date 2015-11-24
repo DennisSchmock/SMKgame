@@ -15,10 +15,10 @@ public class Engine {
 
     //Bliver brugt hos randomQuestion
     private static Random rnd = new Random();
-    private Question lastShownQuestion;
+    private static Question lastShownQuestion;
 
     //Hvor pointene bliver gemt midlertidigt.
-    private int points = 0;
+    private static int points = 0;
 
     public String randomQuestion() {
         int randomRangeUpperLimit = size();
@@ -28,7 +28,7 @@ public class Engine {
         return question.getQuestion();
     }
 
-    public boolean checkGuess(int correct) {
+    public static boolean checkGuess(int correct) {
         if (lastShownQuestion.getCorrect() == correct) {
             setPoints(getPoints() + 1);
             return true;
@@ -40,12 +40,12 @@ public class Engine {
     /**
      * @param points the points to set
      */
-    public void setPoints(int points) {
-        this.points = points;
+    public static void setPoints(int p) {
+        points = p;
     }
 
-    public int getPoints() {
-        return this.points;
+    public static int getPoints() {
+        return points;
     }
 
     public int size() {

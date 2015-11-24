@@ -8,7 +8,6 @@ private String name;
 private ImageIcon picture;
 private int score;
 private int tempAnswer;
-private int score = 0;
 Engine engine = new Engine();
 SMKGame smk = new SMKGame();
 
@@ -21,9 +20,7 @@ public User(String name, ImageIcon picture){
     this.name = name;
     this.picture = picture;
 }
-public User() {
-    
-}
+
 
 
     /**
