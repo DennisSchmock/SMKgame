@@ -101,6 +101,10 @@
               </Events>
             </Component>
             <Component class="javax.swing.JProgressBar" name="jProgressBar1">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
+                <Property name="value" type="int" value="100"/>
+              </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
@@ -212,6 +216,12 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JProgressBar" name="jProgressBar2">
+              <Properties>
+                <Property name="value" type="int" value="100"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel6">
               <Properties>
@@ -312,6 +322,9 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="answerButtonAActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JButton" name="answerButtonB">
               <Properties>
@@ -327,6 +340,9 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="answerButtonBActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JButton" name="answerButtonC">
               <Properties>
@@ -338,6 +354,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Answer C"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JButton" name="answerButtonD">
               <Properties>
@@ -349,8 +368,18 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Answer D"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JProgressBar" name="jProgressBar3">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
+                <Property name="value" type="int" value="100"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JButton" name="jButton3">
               <Properties>
@@ -426,6 +455,12 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JProgressBar" name="jProgressBar4">
+              <Properties>
+                <Property name="value" type="int" value="100"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="scoreLabel">
               <Properties>
@@ -510,6 +545,12 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JProgressBar" name="jProgressBar5">
+              <Properties>
+                <Property name="value" type="int" value="100"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JButton" name="jButton5">
               <Properties>

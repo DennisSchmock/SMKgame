@@ -10,7 +10,7 @@ public class Smartphone extends javax.swing.JFrame {
     
     
     // Importing BigScreen GUI
-    BigScreen bigscreen = new BigScreen();
+    public BigScreen bigscreen = new BigScreen();
     SMKGame game = new SMKGame();
 
     public Smartphone() {
@@ -113,6 +113,9 @@ public class Smartphone extends javax.swing.JFrame {
             }
         });
 
+        jProgressBar1.setToolTipText("");
+        jProgressBar1.setValue(100);
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("THE ART GAME");
@@ -180,6 +183,8 @@ public class Smartphone extends javax.swing.JFrame {
         nameLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         nameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         nameLabel.setText("Name Here");
+
+        jProgressBar2.setValue(100);
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SMKGUI/newpackage/Mona-Lisa-icon.png"))); // NOI18N
@@ -251,6 +256,9 @@ public class Smartphone extends javax.swing.JFrame {
         answerButtonD.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         answerButtonD.setText("Answer D");
 
+        jProgressBar3.setToolTipText("");
+        jProgressBar3.setValue(100);
+
         jButton3.setText("jButton3");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -312,6 +320,8 @@ public class Smartphone extends javax.swing.JFrame {
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Congratulations you have");
 
+        jProgressBar4.setValue(100);
+
         scoreLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         scoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         scoreLabel.setText("Insert score here");
@@ -360,6 +370,8 @@ public class Smartphone extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Ranking");
+
+        jProgressBar5.setValue(100);
 
         jButton5.setText("jButton5");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -499,10 +511,10 @@ public class Smartphone extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton answerButtonA;
-    private javax.swing.JButton answerButtonB;
-    private javax.swing.JButton answerButtonC;
-    private javax.swing.JButton answerButtonD;
+    public javax.swing.JButton answerButtonA;
+    public javax.swing.JButton answerButtonB;
+    public javax.swing.JButton answerButtonC;
+    public javax.swing.JButton answerButtonD;
     private javax.swing.JPanel answerPanel;
     private javax.swing.JPanel introPanel;
     private javax.swing.JButton jButton1;
@@ -526,10 +538,10 @@ public class Smartphone extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     public javax.swing.JProgressBar jProgressBar1;
-    private javax.swing.JProgressBar jProgressBar2;
-    private javax.swing.JProgressBar jProgressBar3;
-    private javax.swing.JProgressBar jProgressBar4;
-    private javax.swing.JProgressBar jProgressBar5;
+    public javax.swing.JProgressBar jProgressBar2;
+    public javax.swing.JProgressBar jProgressBar3;
+    public javax.swing.JProgressBar jProgressBar4;
+    public javax.swing.JProgressBar jProgressBar5;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JPanel rankingPanel;
