@@ -1,4 +1,5 @@
-package Control;
+package SMKGUI;
+
 
 import Engine.Engine;
 import Engine.InputOutput;
@@ -14,7 +15,6 @@ import javax.swing.JFrame;
 import javax.swing.JProgressBar;
 import javax.swing.Timer;
 
-
 public class GUI_For_Queing {
 
     private static Timer timer;
@@ -23,14 +23,13 @@ public class GUI_For_Queing {
     private static int countAnswer = 200;
     private static int countScore = 200;
     private static int countRanking = 200;
-    private static int numberQ = 2;
+    private static int numberQ = 4;
     private static int countUp;
     private static boolean gameBool = true;
     private static Smartphone smartphone;
-    private static ArrayList<Question> questions;
+ //   private static ArrayList<Question> questions;
     private static Question currentQuestion;
     //private Engine engine = new Engine();
-    
 
     public static void main(String[] args) {
         // Smartphone GUI
@@ -38,9 +37,8 @@ public class GUI_For_Queing {
         smartphone = new Smartphone();
         smartphone.setVisible(true);
         InputOutput.load("fil.txt");
-        questions = InputOutput.loadQuestions();
-        System.out.println(questions);
-        
+       // questions = InputOutput.loadQuestions();
+       // System.out.println(questions);
 
         theTimer();
 
@@ -52,7 +50,7 @@ public class GUI_For_Queing {
 
             @Override
             public void actionPerformed(ActionEvent event) {
-                countUp++;            
+                countUp++;
                 if (countUp <= countIntro) {
                     smartphone.jProgressBar1.setMaximum(countIntro);
                     smartphone.jProgressBar1.setValue(countIntro - countUp);
@@ -63,21 +61,21 @@ public class GUI_For_Queing {
                     smartphone.jProgressBar2.setValue(countUser - (countUp - countIntro));
 
                 } else if (countUp <= countUser + countIntro + countAnswer) {
-                    currentQuestion = questions.get(0);
+                    currentQuestion = InputOutput.questions.get(0);
                     smartphone.answerPanel();
                     smartphone.jProgressBar3.setMaximum(countUser);
                     smartphone.jProgressBar3.setValue(countUser - (countUp - countIntro - countAnswer));
-                    smartphone.bigscreen.jLabel11.setText(questions.get(0).getQuestion());
+                    smartphone.bigscreen.jLabel11.setText(currentQuestion.getQuestion());
                     smartphone.answerButtonA.setText(currentQuestion.getA1());
                     smartphone.answerButtonB.setText(currentQuestion.getA2());
                     smartphone.answerButtonC.setText(currentQuestion.getA3());
                     smartphone.answerButtonD.setText(currentQuestion.getA4());
                     smartphone.bigscreen.jLabel13.setIcon(currentQuestion.getPicture());
-                } else if (countUp <= countUser + countIntro + countAnswer*numberQ) {
-                    currentQuestion = questions.get(1);
+                } else if (countUp <= countUser + countIntro + countAnswer * 2) {
+                    currentQuestion = InputOutput.questions.get(1);
                     smartphone.answerPanel();
                     smartphone.jProgressBar3.setMaximum(countUser);
-                    smartphone.jProgressBar3.setValue(countUser - (countUp - countIntro - countAnswer*numberQ));
+                    smartphone.jProgressBar3.setValue(countUser - (countUp - countIntro - countAnswer * 2));
                     smartphone.bigscreen.jLabel11.setText(currentQuestion.getQuestion());
                     smartphone.answerButtonA.setText(currentQuestion.getA1());
                     smartphone.answerButtonB.setText(currentQuestion.getA2());
@@ -85,18 +83,42 @@ public class GUI_For_Queing {
                     smartphone.answerButtonD.setText(currentQuestion.getA4());
                     smartphone.bigscreen.jLabel13.setIcon(currentQuestion.getPicture());
 
-                } else if (countUp <= countUser + countIntro + countAnswer*numberQ+ countScore) {
+                } else if (countUp <= countUser + countIntro + countAnswer * 3) {
+                    currentQuestion = InputOutput.questions.get(2);
+                    smartphone.answerPanel();
+                    smartphone.jProgressBar3.setMaximum(countUser);
+                    smartphone.jProgressBar3.setValue(countUser - (countUp - countIntro - countAnswer * 3));
+                    smartphone.bigscreen.jLabel11.setText(currentQuestion.getQuestion());
+                    smartphone.answerButtonA.setText(currentQuestion.getA1());
+                    smartphone.answerButtonB.setText(currentQuestion.getA2());
+                    smartphone.answerButtonC.setText(currentQuestion.getA3());
+                    smartphone.answerButtonD.setText(currentQuestion.getA4());
+                    smartphone.bigscreen.jLabel13.setIcon(currentQuestion.getPicture());
+
+                } else if (countUp <= countUser + countIntro + countAnswer * numberQ) {
+                    currentQuestion = InputOutput.questions.get(3);
+                    smartphone.answerPanel();
+                    smartphone.jProgressBar3.setMaximum(countUser);
+                    smartphone.jProgressBar3.setValue(countUser - (countUp - countIntro - countAnswer * numberQ));
+                    smartphone.bigscreen.jLabel11.setText(currentQuestion.getQuestion());
+                    smartphone.answerButtonA.setText(currentQuestion.getA1());
+                    smartphone.answerButtonB.setText(currentQuestion.getA2());
+                    smartphone.answerButtonC.setText(currentQuestion.getA3());
+                    smartphone.answerButtonD.setText(currentQuestion.getA4());
+                    smartphone.bigscreen.jLabel13.setIcon(currentQuestion.getPicture());
+
+                } else if (countUp <= countUser + countIntro + countAnswer * numberQ + countScore) {
 
                     smartphone.scorePanel();
                     smartphone.jProgressBar4.setMaximum(countUser);
-                    smartphone.jProgressBar4.setValue(countUser - (countUp - countIntro - countAnswer*numberQ- countScore));
+                    smartphone.jProgressBar4.setValue(countUser - (countUp - countIntro - countAnswer * numberQ - countScore));
 
-                } else if (countUp <= countUser + countIntro + countAnswer*numberQ+ countScore + countRanking) {
+                } else if (countUp <= countUser + countIntro + countAnswer * numberQ + countScore + countRanking) {
                     smartphone.rankingPanel();
                     smartphone.jProgressBar5.setMaximum(countUser);
-                    smartphone.jProgressBar5.setValue(countUser - (countUp - countIntro - countAnswer*numberQ- countScore - countRanking));
+                    smartphone.jProgressBar5.setValue(countUser - (countUp - countIntro - countAnswer * numberQ - countScore - countRanking));
 
-                } else if (countUp > countUser + countIntro + countAnswer*numberQ+ countScore + countRanking) {
+                } else if (countUp > countUser + countIntro + countAnswer * numberQ + countScore + countRanking) {
                     timer.stop();
                     try {
                         String[] args = {""};
