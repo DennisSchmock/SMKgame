@@ -12,9 +12,9 @@ import javax.swing.Timer;
 public class SMKmain {
 
     private static Timer timer;
-    private static int countIntro = 100;
-    private static int countUser = 100;
-    private static int countAnswer = 200;
+    private static int countIntro = 200;
+    private static int countUser = 200;
+    private static int countAnswer = 500;
     private static int countScore = 200;
     private static int countRanking = 200;
     private static int numberQ = 4;
@@ -25,7 +25,6 @@ public class SMKmain {
     private static User user = new User();
     private static Engine engine = new Engine();
     private static InputOutput io = new InputOutput();
-    
 
     public static void main(String[] args) {
         countUp = 0;
@@ -65,8 +64,9 @@ public class SMKmain {
                     smartphone.answerButtonD.setText(currentQuestion.getA4());
                     smartphone.bigscreen.jLabel13.setIcon(currentQuestion.getPicture());
                     if (countUp == countUser + countIntro + countAnswer - 1) {
+                        Engine.checkGuess(currentQuestion, user);
                         smartphone.resetButtons();
-                        
+                        user.setTempAnswer(0);
 
                     }
                 } else if (countUp <= countUser + countIntro + countAnswer * 2) {
@@ -83,6 +83,9 @@ public class SMKmain {
                     smartphone.bigscreen.jLabel13.setIcon(currentQuestion.getPicture());
                     if (countUp == countUser + countIntro + (countAnswer * 2) - 1) {
                         smartphone.resetButtons();
+                        Engine.checkGuess(currentQuestion, user);
+                        user.setTempAnswer(0);
+
                     }
 
                 } else if (countUp <= countUser + countIntro + countAnswer * 3) {
@@ -99,6 +102,8 @@ public class SMKmain {
                     smartphone.bigscreen.jLabel13.setIcon(currentQuestion.getPicture());
                     if (countUp == countUser + countIntro + countAnswer * 3 - 1) {
                         smartphone.resetButtons();
+                        Engine.checkGuess(currentQuestion, user);
+                        user.setTempAnswer(0);
 
                     }
 
@@ -114,6 +119,12 @@ public class SMKmain {
                     smartphone.answerButtonC.setText(currentQuestion.getA3());
                     smartphone.answerButtonD.setText(currentQuestion.getA4());
                     smartphone.bigscreen.jLabel13.setIcon(currentQuestion.getPicture());
+                    if (countUp == countUser + countIntro + countAnswer * 4 - 1) {
+                        smartphone.resetButtons();
+                        Engine.checkGuess(currentQuestion, user);
+                        user.setTempAnswer(0);
+
+                    }
 
                 } else if (countUp <= countUser + countIntro + countAnswer * numberQ + countScore) {
 

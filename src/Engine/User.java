@@ -4,24 +4,22 @@ import Control.SMKGame;
 import javax.swing.ImageIcon;
 
 public class User {
-private String name;
-private ImageIcon picture;
-private int score;
-private int tempAnswer;
-Engine engine = new Engine();
-SMKGame smk = new SMKGame();
 
+    private String name;
+    private ImageIcon picture;
+    private int score;
+    private int tempAnswer;
+    Engine engine = new Engine();
+    SMKGame smk = new SMKGame();
 
+    public User() {
 
-public User(){
-    
-}
-public User(String name, ImageIcon picture){
-    this.name = name;
-    this.picture = picture;
-}
+    }
 
-
+    public User(String name, ImageIcon picture) {
+        this.name = name;
+        this.picture = picture;
+    }
 
     /**
      * @return the name
@@ -47,8 +45,8 @@ public User(String name, ImageIcon picture){
     /**
      * @param score the score to set
      */
-    public void setScore() {
-        this.score = smk.getPoints();
+    public void setScore(int i) {
+        this.score = i;
     }
 
     /**
@@ -64,4 +62,6 @@ public User(String name, ImageIcon picture){
     public void setTempAnswer(int tempAnswer) {
         this.tempAnswer = tempAnswer;
     }
+    
+    
 }

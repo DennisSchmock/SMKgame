@@ -28,11 +28,14 @@ public class Engine {
         return question.getQuestion();
     }
 
-    public static boolean checkGuess(int correct) {
-        if (lastShownQuestion.getCorrect() == correct) {
-            setPoints(getPoints() + 1);
+    public static boolean checkGuess(Question question,User user) {
+        if (question.getCorrect() == user.getTempAnswer()) {
+            setPoints(getPoints(user) + 1,user);
+            System.out.println("User answered correct");
+            System.out.println("Userscore: " + user.getScore());
             return true;
         } else {
+            System.out.println("User answered incorrect");
             return false;
         }
     }
@@ -40,11 +43,11 @@ public class Engine {
     /**
      * @param points the points to set
      */
-    public static void setPoints(int p) {
-        points = p;
+    public static void setPoints(int p,User user) {
+        user.setScore(p);
     }
 
-    public static int getPoints() {
+    public static int getPoints(User user) {
         return points;
     }
 

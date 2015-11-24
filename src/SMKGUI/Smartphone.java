@@ -237,7 +237,7 @@ public class Smartphone extends javax.swing.JFrame {
         jLabel7.setText("Pick an answer!");
 
         answerButtonA.setBackground(new java.awt.Color(102, 153, 255));
-        answerButtonA.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        answerButtonA.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         answerButtonA.setText("Answer A");
         answerButtonA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -246,9 +246,10 @@ public class Smartphone extends javax.swing.JFrame {
         });
 
         answerButtonB.setBackground(new java.awt.Color(51, 255, 51));
-        answerButtonB.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        answerButtonB.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         answerButtonB.setText("Answer B");
         answerButtonB.setToolTipText("");
+        answerButtonB.setSize(new java.awt.Dimension(144, 37));
         answerButtonB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 answerButtonBActionPerformed(evt);
@@ -256,7 +257,7 @@ public class Smartphone extends javax.swing.JFrame {
         });
 
         answerButtonC.setBackground(new java.awt.Color(255, 255, 51));
-        answerButtonC.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        answerButtonC.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         answerButtonC.setText("Answer C");
         answerButtonC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -265,8 +266,9 @@ public class Smartphone extends javax.swing.JFrame {
         });
 
         answerButtonD.setBackground(new java.awt.Color(255, 51, 51));
-        answerButtonD.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        answerButtonD.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         answerButtonD.setText("Answer D");
+        answerButtonD.setSize(new java.awt.Dimension(147, 37));
         answerButtonD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 answerButtonDActionPerformed(evt);
@@ -299,27 +301,27 @@ public class Smartphone extends javax.swing.JFrame {
             .addGroup(answerPanelLayout.createSequentialGroup()
                 .addGap(53, 53, 53)
                 .addGroup(answerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(answerButtonA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(answerButtonC, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(answerButtonA, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(answerButtonC, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(answerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(answerButtonD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(answerButtonB, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(answerButtonB, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(answerButtonD, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         answerPanelLayout.setVerticalGroup(
             answerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(answerPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
                 .addGroup(answerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(answerButtonA, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(answerButtonB, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(answerButtonA, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(answerButtonB, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(answerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(answerButtonD, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(answerButtonC, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(answerButtonD, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(answerButtonC, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(126, 126, 126)
                 .addComponent(jButton3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
