@@ -1,17 +1,24 @@
 package Engine;
 
+import Control.SMKGame;
 import javax.swing.ImageIcon;
 
 public class User {
 private String name;
 private ImageIcon picture;
-private int score;
+private int score = 0;
+Engine engine = new Engine();
+SMKGame smk = new SMKGame();
 
 
 public User(String name, ImageIcon picture){
     this.name = name;
     this.picture = picture;
 }
+public User() {
+    
+}
+
 
     /**
      * @return the name
@@ -37,7 +44,7 @@ public User(String name, ImageIcon picture){
     /**
      * @param score the score to set
      */
-    public void setScore(int score) {
-        this.score = score;
+    public void setScore() {
+        this.score = smk.getPoints();
     }
 }

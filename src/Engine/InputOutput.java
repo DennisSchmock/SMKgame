@@ -39,7 +39,7 @@ public class InputOutput {
                 String imagepath = "/SMKGUI/" + s.split(",")[5].trim();
                 String number = s.split(",")[6].trim();
                 int correct = parseInt(number);
-                System.out.println(q + " " + a1 + " " + a2 + " " + a3 + " " + a4 + " " + correct);
+                //System.out.println(q + " " + a1 + " " + a2 + " " + a3 + " " + a4 + " " + correct);
                 //needs to be intialized
                 ImageIcon pic = questionIcon(imagepath);
                 //the object, quiz, should consist of the strings from above

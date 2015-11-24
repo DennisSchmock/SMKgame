@@ -13,6 +13,7 @@ public interface SMKGameInterface {
     public void clear();
     public ArrayList<User> returnRank();
     public String[] answerOptions();
-    public int Points();
+    public void setPoints(int points);
+    public int getPoints();
 
 }

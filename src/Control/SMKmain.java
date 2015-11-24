@@ -15,8 +15,9 @@ public class SMKmain {
 
     public static void main(String[] args) {
 
-        SMKGame test = new SMKGame();
-        InputOutput io = new InputOutput();
+        Engine engine = new Engine();
+        InputOutput io;
+        User user;
         
         /*for (Question al1 : al) {
             System.out.println(al1.getQuestion());
@@ -25,8 +26,25 @@ public class SMKmain {
             System.out.println(al1.getPicture());
         }
         System.out.println("test");*/
-        System.out.println(test.randomQuestion());
-        System.out.println(test.checkGuess(2));
+        
+        //Test of different methods in Engine/SMKGame
+        System.out.println(engine.randomQuestion());
+        System.out.println(engine.checkGuess(3));
+        System.out.println(engine.randomQuestion());
+        System.out.println(engine.checkGuess(2));
+        System.out.println(engine.randomQuestion());
+        System.out.println(engine.checkGuess(2));
+        System.out.println(engine.randomQuestion());
+        System.out.println(engine.checkGuess(3));
+        System.out.println(engine.randomQuestion());
+        System.out.println(engine.checkGuess(2));
+        System.out.println(engine.randomQuestion());
+        System.out.println(engine.checkGuess(3));
+        System.out.println(engine.randomQuestion());
+        System.out.println(engine.checkGuess(2));
+        
+        //Test Score System
+        System.out.println(engine.getPoints());
         
     }
 }

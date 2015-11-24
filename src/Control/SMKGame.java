@@ -13,11 +13,6 @@ import java.util.Random;
  */
 public class SMKGame implements SMKGameInterface {
 
-    private static Random rnd = new Random();
-    private Question lastShownQuestion;
-    Engine engine = new Engine();
-    ArrayList<Question> questions = InputOutput.loadQuestions();
-
     @Override
     public void timer() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -25,11 +20,7 @@ public class SMKGame implements SMKGameInterface {
 
     @Override
     public String randomQuestion() {
-        int randomRangeUpperLimit = size();
-        int randomNumber = rnd.nextInt(randomRangeUpperLimit);
-        Question question = questions.get(randomNumber);
-        lastShownQuestion = question;
-        return question.getQuestion();
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -39,16 +30,12 @@ public class SMKGame implements SMKGameInterface {
 
     @Override
     public boolean checkGuess(int correct) {
-        if (lastShownQuestion.getCorrect() == correct) {
-            return true;
-        } else {
-            return false;
-        }
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public int size() {
-        return questions.size();
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -63,13 +50,16 @@ public class SMKGame implements SMKGameInterface {
 
     @Override
     public String[] answerOptions() {
-        return engine.returnAnswers();
-
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
     @Override
-    public int Points() {
-             throw new UnsupportedOperationException("Not supported yet.");
+    public void setPoints(int points) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
 
+    @Override
+    public int getPoints() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
