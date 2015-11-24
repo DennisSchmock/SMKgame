@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -65,5 +66,9 @@ public class InputOutput {
     public static ArrayList<Question> loadQuestions() {
         //Put logic for loading question here
         return questions;
+    }
+    
+    public static void shuffleQuestions(){
+        Collections.shuffle(questions);
     }
 }

@@ -12,4 +12,9 @@ public class Engine {
         String[] answers = {"one", "two"};
         return answers;
     }
+    
+    public static void setTempAnswer(int i, User user){
+        user.setTempAnswer(i);
+    }
+    
 }

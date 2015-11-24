@@ -1,21 +1,24 @@
 package SMKGUI;
 
 import Control.SMKGame;
+import Engine.User;
 import java.awt.CardLayout;
+import java.awt.Color;
 
 public class Smartphone extends javax.swing.JFrame {
 
     // Fields
     private CardLayout layCard;
-    
-    
+
     // Importing BigScreen GUI
     public BigScreen bigscreen = new BigScreen();
     SMKGame game = new SMKGame();
+    private User user;
 
-    public Smartphone() {
+    public Smartphone(User user) {
         initComponents();
-        
+        this.user = user;
+
         // Initialize BigScreen GUI
         bigscreen.setVisible(true);
 
@@ -27,6 +30,12 @@ public class Smartphone extends javax.swing.JFrame {
         mainPanel.add("answerPanel", answerPanel);
         mainPanel.add("scorePanel", scorePanel);
         mainPanel.add("rankingPanel", rankingPanel);
+    }
+    public void resetButtons(){
+        answerButtonA.setForeground(Color.BLACK);
+        answerButtonB.setForeground(Color.BLACK);
+        answerButtonC.setForeground(Color.BLACK);
+        answerButtonD.setForeground(Color.BLACK);
     }
 
     public void introPanel() {
@@ -53,8 +62,6 @@ public class Smartphone extends javax.swing.JFrame {
         layCard.show(mainPanel, "rankingPanel");
         bigscreen.bigRankingPanel();
     }
-    
-    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -251,10 +258,20 @@ public class Smartphone extends javax.swing.JFrame {
         answerButtonC.setBackground(new java.awt.Color(255, 255, 51));
         answerButtonC.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         answerButtonC.setText("Answer C");
+        answerButtonC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                answerButtonCActionPerformed(evt);
+            }
+        });
 
         answerButtonD.setBackground(new java.awt.Color(255, 51, 51));
         answerButtonD.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         answerButtonD.setText("Answer D");
+        answerButtonD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                answerButtonDActionPerformed(evt);
+            }
+        });
 
         jProgressBar3.setToolTipText("");
         jProgressBar3.setValue(100);
@@ -295,7 +312,7 @@ public class Smartphone extends javax.swing.JFrame {
             .addGroup(answerPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
                 .addGroup(answerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(answerButtonA, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(answerButtonB, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -461,6 +478,12 @@ public class Smartphone extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void answerButtonBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_answerButtonBActionPerformed
+ 
+        game.pushAnswerButton(2, user);
+        answerButtonB.setForeground(Color.red);
+        answerButtonD.setForeground(Color.LIGHT_GRAY);
+        answerButtonC.setForeground(Color.LIGHT_GRAY);
+        answerButtonA.setForeground(Color.LIGHT_GRAY);
     }//GEN-LAST:event_answerButtonBActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -472,8 +495,28 @@ public class Smartphone extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void answerButtonAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_answerButtonAActionPerformed
-        
+        game.pushAnswerButton(1, user);
+        answerButtonA.setForeground(Color.red);
+        answerButtonB.setForeground(Color.LIGHT_GRAY);
+        answerButtonC.setForeground(Color.LIGHT_GRAY);
+        answerButtonD.setForeground(Color.LIGHT_GRAY);
     }//GEN-LAST:event_answerButtonAActionPerformed
+
+    private void answerButtonCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_answerButtonCActionPerformed
+        game.pushAnswerButton(3, user);        // TODO add your handling code here:
+        answerButtonC.setForeground(Color.red);
+        answerButtonB.setForeground(Color.LIGHT_GRAY);
+        answerButtonA.setForeground(Color.LIGHT_GRAY);
+        answerButtonD.setForeground(Color.LIGHT_GRAY);
+    }//GEN-LAST:event_answerButtonCActionPerformed
+
+    private void answerButtonDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_answerButtonDActionPerformed
+        game.pushAnswerButton(4, user);        // TODO add your handling code here:
+        answerButtonD.setForeground(Color.red);
+        answerButtonB.setForeground(Color.LIGHT_GRAY);
+        answerButtonC.setForeground(Color.LIGHT_GRAY);
+        answerButtonA.setForeground(Color.LIGHT_GRAY);
+    }//GEN-LAST:event_answerButtonDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -505,7 +548,6 @@ public class Smartphone extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Smartphone().setVisible(true);
             }
         });
     }
