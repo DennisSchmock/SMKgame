@@ -37,7 +37,7 @@ public class SMKGame implements SMKGameInterface {
 
     @Override
     public void clear() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        questions.clear();
     }
 
     @Override
@@ -55,7 +55,6 @@ public class SMKGame implements SMKGameInterface {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    @Override
     public void pushAnswerButton(int i, User user){
         Engine.setTempAnswer(i, user);
     }

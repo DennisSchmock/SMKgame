@@ -25,12 +25,13 @@ public class SMKmain {
     private static User user = new User();
     private static Engine engine = new Engine();
     private static InputOutput io = new InputOutput();
+    
 
     public static void main(String[] args) {
         countUp = 0;
         smartphone = new Smartphone(user);
         smartphone.setVisible(true);
-        InputOutput.load("fil.txt");
+        io.load("fil.txt");
         InputOutput.shuffleQuestions();
 
         theTimer();
@@ -65,6 +66,7 @@ public class SMKmain {
                     smartphone.bigscreen.jLabel13.setIcon(currentQuestion.getPicture());
                     if (countUp == countUser + countIntro + countAnswer - 1) {
                         smartphone.resetButtons();
+                        
 
                     }
                 } else if (countUp <= countUser + countIntro + countAnswer * 2) {

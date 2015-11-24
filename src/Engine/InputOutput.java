@@ -15,13 +15,15 @@ public class InputOutput {
 
     BufferedReader read;
     public static ArrayList<Question> questions;
+    public static ArrayList<User> userName;
     File filename;
 
     public InputOutput() {
         load("fil.txt");
+        userLoad("filen.txt");
     }
 
-    public static boolean load(String filename) {
+    public boolean load(String filename) {
         questions = new ArrayList<>();
         try {
             FileReader read = new FileReader(filename);
@@ -40,8 +42,7 @@ public class InputOutput {
                 String imagepath = "/SMKGUI/" + s.split(",")[5].trim();
                 String number = s.split(",")[6].trim();
                 int correct = parseInt(number);
-                //System.out.println(q + " " + a1 + " " + a2 + " " + a3 + " " + a4 + " " + correct);
-                //needs to be intialized
+                
                 ImageIcon pic = questionIcon(imagepath);
                 //the object, quiz, should consist of the strings from above
                 Question quest = new Question(q, a1, a2, a3, a4, pic, correct);
@@ -57,10 +58,43 @@ public class InputOutput {
     }
 
     // Not being used.
-    public static ImageIcon questionIcon(String filename) {
-        ImageIcon image = new ImageIcon(filename);
-        return image;
+    public ImageIcon questionIcon(String path) {
+        
+    java.net.URL imgURL = getClass().getResource(path);
+    if (imgURL != null) {
+        return new ImageIcon(imgURL);
+    } else {
+        System.err.println("Couldn't find file: " + path);
+        return null;
+    }
+    }
+    
+    
+    public boolean userLoad(String filename){
+        
+    try {
+            FileReader read = new FileReader(filename);
+            BufferedReader r = new BufferedReader(read);
+            while (true) {
+                String s = r.readLine();
+                if (s == null) {
+                    break;
+                }
+                // words a seperated by the comma in the textfile
+                String name = s.split(",")[0].trim();
+                String imagepath = "/SMKGUI.newpackage/" + s.split(",")[1].trim();
+                ImageIcon picture = questionIcon(imagepath);
+                User user = new User(name, picture);               
+                userName.add(user);
 
+            }
+
+            read.close();
+        } catch (IOException e) {
+            return false;
+        }
+        return true;
+        
     }
 
     public static ArrayList<Question> loadQuestions() {

@@ -8,7 +8,6 @@ private String name;
 private ImageIcon picture;
 private int score = 0;
 private int tempAnswer;
-Engine engine = new Engine();
 SMKGame smk = new SMKGame();
 
 
