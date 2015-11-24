@@ -51,4 +51,9 @@ public class Engine {
     public int size() {
         return questions.size();
     }
+    
+    public static void setTempAnswer(int i, User user){
+        user.setTempAnswer(i);
+    }
+    
 }

@@ -6,11 +6,17 @@ import javax.swing.ImageIcon;
 public class User {
 private String name;
 private ImageIcon picture;
+private int score;
+private int tempAnswer;
 private int score = 0;
 Engine engine = new Engine();
 SMKGame smk = new SMKGame();
 
 
+
+public User(){
+    
+}
 public User(String name, ImageIcon picture){
     this.name = name;
     this.picture = picture;
@@ -46,5 +52,19 @@ public User() {
      */
     public void setScore() {
         this.score = smk.getPoints();
+    }
+
+    /**
+     * @return the tempAnswer
+     */
+    public int getTempAnswer() {
+        return tempAnswer;
+    }
+
+    /**
+     * @param tempAnswer the tempAnswer to set
+     */
+    public void setTempAnswer(int tempAnswer) {
+        this.tempAnswer = tempAnswer;
     }
 }

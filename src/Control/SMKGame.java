@@ -1,11 +1,8 @@
 package Control;
 
 import Engine.Engine;
-import Engine.InputOutput;
-import Engine.Question;
 import Engine.User;
 import java.util.ArrayList;
-import java.util.Random;
 
 /**
  *
@@ -57,6 +54,12 @@ public class SMKGame implements SMKGameInterface {
     public void setPoints(int points) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    @Override
+    public void pushAnswerButton(int i, User user){
+        Engine.setTempAnswer(i, user);
+    }
+    
 
     @Override
     public int getPoints() {
