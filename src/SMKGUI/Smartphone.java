@@ -194,7 +194,7 @@ public class Smartphone extends javax.swing.JFrame {
         jProgressBar2.setValue(100);
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SMKGUI/newpackage/Mona-Lisa-icon.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SMKGUI_pics/Icon1.png"))); // NOI18N
 
         javax.swing.GroupLayout userPanelLayout = new javax.swing.GroupLayout(userPanel);
         userPanel.setLayout(userPanelLayout);
@@ -577,7 +577,7 @@ public class Smartphone extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    public javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -587,7 +587,7 @@ public class Smartphone extends javax.swing.JFrame {
     public javax.swing.JProgressBar jProgressBar4;
     public javax.swing.JProgressBar jProgressBar5;
     private javax.swing.JPanel mainPanel;
-    private javax.swing.JLabel nameLabel;
+    public javax.swing.JLabel nameLabel;
     private javax.swing.JPanel rankingPanel;
     public javax.swing.JLabel scoreLabel;
     private javax.swing.JPanel scorePanel;

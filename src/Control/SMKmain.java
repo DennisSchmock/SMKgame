@@ -14,25 +14,27 @@ public class SMKmain {
     private static Timer timer;
     private static int countIntro = 200;
     private static int countUser = 200;
-    private static int countAnswer = 1600;
+    private static int countAnswer = 300;
     private static int countScore = 200;
     private static int countRanking = 200;
     private static int numberQ = 5;
     private static int countUp;
-    private static boolean gameBool = true;
     private static Smartphone smartphone;
     private static Question currentQuestion;
-    private static User user = new User();
+    private static User user;
     private static Engine engine = new Engine();
     private static InputOutput io = new InputOutput();
 
     public static void main(String[] args) {
         countUp = 0;
+        io.load("fil.txt");
+        io.userLoad("users.txt");
+        InputOutput.shuffleQuestions();
+        InputOutput.shuffleUsers();
+        user = InputOutput.loadUsers().get(0);
         smartphone = new Smartphone(user);
         smartphone.setVisible(true);
-        io.load("fil.txt");
-        
-        InputOutput.shuffleQuestions();
+       
         
 
         theTimer();
@@ -56,6 +58,8 @@ public class SMKmain {
                     smartphone.userPanel();
                     smartphone.jProgressBar2.setMaximum(countUser);
                     smartphone.jProgressBar2.setValue(countUser - (countUp - countIntro));
+                    smartphone.nameLabel.setText(user.getName());
+                    smartphone.jLabel6.setIcon(user.getPicture());
 
                     smartphone.bigscreen.jProgressBar2.setMaximum(countUser);
                     smartphone.bigscreen.jProgressBar2.setValue(countUser - (countUp - countIntro));

@@ -15,7 +15,7 @@ public class InputOutput {
 
     BufferedReader read;
     public static ArrayList<Question> questions;
-    public static ArrayList<User> userName;
+    public static ArrayList<User> users;
     File filename;
 
     public InputOutput() {
@@ -57,7 +57,6 @@ public class InputOutput {
         return true;
     }
 
-    // Not being used.
     public ImageIcon questionIcon(String path) {
         
     java.net.URL imgURL = getClass().getResource(path);
@@ -71,7 +70,7 @@ public class InputOutput {
     
     
     public boolean userLoad(String filename){
-        
+        users = new ArrayList<>();
     try {
             FileReader read = new FileReader(filename);
             BufferedReader r = new BufferedReader(read);
@@ -85,7 +84,9 @@ public class InputOutput {
                 String imagepath = "/SMKGUI_pics/" + s.split(",")[1].trim();
                 ImageIcon picture = questionIcon(imagepath);
                 User user = new User(name, picture);               
-                userName.add(user);
+                users.add(user);
+                System.out.println(user.getName());
+                System.out.println(user.getPicture());
 
             }
 
@@ -102,7 +103,15 @@ public class InputOutput {
         return questions;
     }
     
+    public static ArrayList<User> loadUsers(){
+        return users;
+    }
+    
     public static void shuffleQuestions(){
         Collections.shuffle(questions);
+    }
+    
+    public static void shuffleUsers(){
+        Collections.shuffle(users);
     }
 }

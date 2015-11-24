@@ -19,10 +19,9 @@ public class Engine {
 
     InputOutput io = new InputOutput();
     private static Clip clip;
-    MediaPlayer mediaPlayer;
 
     //Arraylisten hvor alle vores spørgsmål/svar ligger. 
-    ArrayList<Question> questions = InputOutput.loadQuestions();
+   // ArrayList<Question> questions = InputOutput.loadQuestions();
 
     //Bliver brugt hos randomQuestion
     private static Random rnd = new Random();
@@ -31,13 +30,13 @@ public class Engine {
     //Hvor pointene bliver gemt midlertidigt.
     private static int points = 0;
 
-    public String randomQuestion() {
-        int randomRangeUpperLimit = size();
-        int randomNumber = rnd.nextInt(randomRangeUpperLimit);
-        Question question = questions.get(randomNumber);
-        lastShownQuestion = question;
-        return question.getQuestion();
-    }
+//    public String randomQuestion() {
+//        int randomRangeUpperLimit = size();
+//        int randomNumber = rnd.nextInt(randomRangeUpperLimit);
+//        Question question = questions.get(randomNumber);
+//        lastShownQuestion = question;
+//        return question.getQuestion();
+//    }
 
     public static boolean checkGuess(Question question, User user) {
         if (question.getCorrect() == user.getTempAnswer()) {
@@ -62,9 +61,7 @@ public class Engine {
         return points;
     }
 
-    public int size() {
-        return questions.size();
-    }
+  
 
     public static void setTempAnswer(int i, User user) {
         user.setTempAnswer(i);
