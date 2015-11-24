@@ -71,5 +71,9 @@ public class SMKGame implements SMKGameInterface {
              throw new UnsupportedOperationException("Not supported yet.");
     }
     
+    public void pushAnswerButton(int i, User user){
+        Engine.setTempAnswer(i, user);
+    }
+    
 
 }
