@@ -82,8 +82,10 @@ public class InputOutput {
                 // words a seperated by the comma in the textfile
                 String name = s.split(",")[0].trim();
                 String imagepath = "/SMKGUI_pics/" + s.split(",")[1].trim();
+                String imagepath2 = "/SMKGUI_pics/" + s.split(",")[2].trim();
                 ImageIcon picture = questionIcon(imagepath);
-                User user = new User(name, picture);               
+                ImageIcon pictureSmall = questionIcon(imagepath2);
+                User user = new User(name, picture,pictureSmall);               
                 users.add(user);
 
             }

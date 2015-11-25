@@ -7,6 +7,7 @@ public class User {
 
     private String name;
     private ImageIcon picture;
+    private ImageIcon pictureSmall;
     private int score;
     private int tempAnswer;
 
@@ -14,9 +15,10 @@ public class User {
 
     }
 
-    public User(String name, ImageIcon picture) {
+    public User(String name, ImageIcon picture, ImageIcon pictureSmall) {
         this.name = name;
         this.picture = picture;
+        this.pictureSmall = pictureSmall;
     }
 
 
