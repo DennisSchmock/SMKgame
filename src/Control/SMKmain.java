@@ -22,10 +22,11 @@ public class SMKmain {
 //    private static Question currentQuestion;
     private static User user;
     private static Engine engine;
-    private static InputOutput io = new InputOutput();
+    private static InputOutput io;
     private static Smartphone smartphone;
 
     public static void main(String[] args) {
+        io = new InputOutput();
         Engine.setCountUp(0);
         InputOutput.shuffleQuestions();
         InputOutput.shuffleUsers();
@@ -65,7 +66,7 @@ public class SMKmain {
 //                    }
 //
 //                } else if (countUp <= countUser + countIntro + countAnswer) {
-//                    currentQuestion = InputOutput.loadQuestions().get(0);
+//                    currentQuestion = InputOutput.getQuestions().get(0);
 //                    smartphone.answerPanel();
 //                    smartphone.jProgressBar3.setMaximum(countAnswer);
 //                    smartphone.jProgressBar3.setValue(countUser - (countUp - countIntro - countAnswer));
@@ -87,7 +88,7 @@ public class SMKmain {
 //                    }
 //                } else if (countUp <= countUser + countIntro + countAnswer * 2) {
 //
-//                    currentQuestion = InputOutput.loadQuestions().get(1);
+//                    currentQuestion = InputOutput.getQuestions().get(1);
 //                    smartphone.answerPanel();
 //                    smartphone.jProgressBar3.setMaximum(countAnswer);
 //                    smartphone.jProgressBar3.setValue(countUser - (countUp - countIntro - countAnswer * 2));
@@ -110,7 +111,7 @@ public class SMKmain {
 //
 //                } else if (countUp <= countUser + countIntro + countAnswer * 3) {
 //
-//                    currentQuestion = InputOutput.loadQuestions().get(2);
+//                    currentQuestion = InputOutput.getQuestions().get(2);
 //                    smartphone.answerPanel();
 //                    smartphone.jProgressBar3.setMaximum(countAnswer);
 //                    smartphone.jProgressBar3.setValue(countUser - (countUp - countIntro - countAnswer * 3));
@@ -133,7 +134,7 @@ public class SMKmain {
 //
 //                } else if (countUp <= countUser + countIntro + countAnswer * 4) {
 //
-//                    currentQuestion = InputOutput.loadQuestions().get(3);
+//                    currentQuestion = InputOutput.getQuestions().get(3);
 //                    smartphone.answerPanel();
 //                    smartphone.jProgressBar3.setMaximum(countAnswer);
 //                    smartphone.jProgressBar3.setValue(countUser - (countUp - countIntro - countAnswer * 4));
@@ -156,7 +157,7 @@ public class SMKmain {
 //
 //                } else if (countUp <= countUser + countIntro + countAnswer * numberQ) {
 //
-//                    currentQuestion = InputOutput.loadQuestions().get(4);
+//                    currentQuestion = InputOutput.getQuestions().get(4);
 //                    smartphone.answerPanel();
 //                    smartphone.jProgressBar3.setMaximum(countAnswer);
 //                    smartphone.jProgressBar3.setValue(countUser - (countUp - countIntro - countAnswer * numberQ));

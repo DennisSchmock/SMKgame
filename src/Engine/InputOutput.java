@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 
 public class InputOutput {
 
@@ -25,14 +24,13 @@ public class InputOutput {
 
     public boolean load(String filename) {
         questions = new ArrayList<>();
+
         try {
             FileReader read = new FileReader(filename);
             BufferedReader r = new BufferedReader(read);
-            while (true) {
-                String s = r.readLine();
-                if (s == null) {
-                    break;
-                }
+            String s = r.readLine();
+            while (s != null) {
+
                 // words a seperated by the comma in the textfile
                 String q = s.split(",")[0].trim();
                 String a1 = s.split(",")[1].trim();
@@ -42,51 +40,52 @@ public class InputOutput {
                 String imagepath = "/SMKGUI_pics/" + s.split(",")[5].trim();
                 String number = s.split(",")[6].trim();
                 int correct = parseInt(number);
-                
+
                 ImageIcon pic = questionIcon(imagepath);
                 //the object, quiz, should consist of the strings from above
                 Question quest = new Question(q, a1, a2, a3, a4, pic, correct);
                 questions.add(quest);
+                s = r.readLine();
 
             }
 
             read.close();
         } catch (IOException e) {
+            System.out.println(e);
             return false;
         }
         return true;
     }
 
     public ImageIcon questionIcon(String path) {
-        
-    java.net.URL imgURL = getClass().getResource(path);
-    if (imgURL != null) {
-        return new ImageIcon(imgURL);
-    } else {
-        System.err.println("Couldn't find file: " + path);
-        return null;
+
+        java.net.URL imgURL = getClass().getResource(path);
+        if (imgURL != null) {
+            return new ImageIcon(imgURL);
+        } else {
+            System.err.println("Couldn't find file: " + path);
+            return null;
+        }
     }
-    }
-    
-    
-    public boolean userLoad(String filename){
+
+    public boolean userLoad(String filename) {
         users = new ArrayList<>();
-    try {
+        try {
             FileReader read = new FileReader(filename);
             BufferedReader r = new BufferedReader(read);
-            while (true) {
-                String s = r.readLine();
-                if (s == null) {
-                    break;
-                }
+            String s = r.readLine();
+
+            while (s != null) {
+
                 // words a seperated by the comma in the textfile
                 String name = s.split(",")[0].trim();
                 String imagepath = "/SMKGUI_pics/" + s.split(",")[1].trim();
                 String imagepath2 = "/SMKGUI_pics/" + s.split(",")[2].trim();
                 ImageIcon picture = questionIcon(imagepath);
                 ImageIcon pictureSmall = questionIcon(imagepath2);
-                User user = new User(name, picture,pictureSmall);               
+                User user = new User(name, picture, pictureSmall);
                 users.add(user);
+                s = r.readLine();
 
             }
 
@@ -95,24 +94,22 @@ public class InputOutput {
             return false;
         }
         return true;
-        
+
     }
 
-    public static ArrayList<Question> loadQuestions() {
-        //Put logic for loading question here
+    public static ArrayList<Question> getQuestions() {
         return questions;
     }
-    
-    public static ArrayList<User> loadUsers(){
+
+    public static ArrayList<User> loadUsers() {
         return users;
     }
-    
-    public static void shuffleQuestions(){
+
+    public static void shuffleQuestions() {
         Collections.shuffle(questions);
     }
-    
-    public static void shuffleUsers(){
-        Random rand = new Random();
-        Collections.shuffle(users, rand);
+
+    public static void shuffleUsers() {
+        Collections.shuffle(users);
     }
 }

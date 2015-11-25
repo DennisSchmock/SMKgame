@@ -38,7 +38,7 @@ public class Engine {
 
 
     //Arraylisten hvor alle vores spørgsmål/svar ligger. 
-   // ArrayList<Question> questions = InputOutput.loadQuestions();
+   // ArrayList<Question> questions = InputOutput.getQuestions();
 
     //Bliver brugt hos randomQuestion
     private static Random rnd = new Random();
@@ -140,7 +140,7 @@ public Engine(Smartphone sp, User u){
                     }
 
                 } else if (getCountUp() <= countUser + countIntro + countAnswer) {
-                    currentQuestion = InputOutput.loadQuestions().get(0);
+                    currentQuestion = InputOutput.getQuestions().get(0);
                     smartphone.answerPanel();
                     smartphone.jProgressBar3.setMaximum(countAnswer);
                     smartphone.jProgressBar3.setValue(countUser - (getCountUp() - countIntro - countAnswer));
@@ -161,7 +161,7 @@ public Engine(Smartphone sp, User u){
                     }
                 } else if (getCountUp() <= countUser + countIntro + countAnswer * 2) {
 
-                    currentQuestion = InputOutput.loadQuestions().get(1);
+                    currentQuestion = InputOutput.getQuestions().get(1);
                     smartphone.answerPanel();
                     smartphone.jProgressBar3.setMaximum(countAnswer);
                     smartphone.jProgressBar3.setValue(countUser - (getCountUp() - countIntro - countAnswer * 2));
@@ -184,7 +184,7 @@ public Engine(Smartphone sp, User u){
 
                 } else if (getCountUp() <= countUser + countIntro + countAnswer * 3) {
 
-                    currentQuestion = InputOutput.loadQuestions().get(2);
+                    currentQuestion = InputOutput.getQuestions().get(2);
                     smartphone.answerPanel();
                     smartphone.jProgressBar3.setMaximum(countAnswer);
                     smartphone.jProgressBar3.setValue(countUser - (getCountUp() - countIntro - countAnswer * 3));
@@ -207,7 +207,7 @@ public Engine(Smartphone sp, User u){
 
                 } else if (getCountUp() <= countUser + countIntro + countAnswer * 4) {
 
-                    currentQuestion = InputOutput.loadQuestions().get(3);
+                    currentQuestion = InputOutput.getQuestions().get(3);
                     smartphone.answerPanel();
                     smartphone.jProgressBar3.setMaximum(countAnswer);
                     smartphone.jProgressBar3.setValue(countUser - (getCountUp() - countIntro - countAnswer * 4));
@@ -230,7 +230,7 @@ public Engine(Smartphone sp, User u){
 
                 } else if (getCountUp() <= countUser + countIntro + countAnswer * numberQ) {
 
-                    currentQuestion = InputOutput.loadQuestions().get(4);
+                    currentQuestion = InputOutput.getQuestions().get(4);
                     smartphone.answerPanel();
                     smartphone.jProgressBar3.setMaximum(countAnswer);
                     smartphone.jProgressBar3.setValue(countUser - (getCountUp() - countIntro - countAnswer * numberQ));

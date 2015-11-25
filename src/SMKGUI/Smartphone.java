@@ -85,6 +85,7 @@ public class Smartphone extends javax.swing.JFrame {
         jProgressBar2 = new javax.swing.JProgressBar();
         jLabel6 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
         answerPanel = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         answerButtonA = new javax.swing.JButton();
@@ -235,6 +236,9 @@ public class Smartphone extends javax.swing.JFrame {
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SMKGUI_pics/header_logo.png"))); // NOI18N
 
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel19.setText("Waiting for other players to join");
+
         javax.swing.GroupLayout userPanelLayout = new javax.swing.GroupLayout(userPanel);
         userPanel.setLayout(userPanelLayout);
         userPanelLayout.setHorizontalGroup(
@@ -251,6 +255,7 @@ public class Smartphone extends javax.swing.JFrame {
                             .addComponent(jLabel18))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         userPanelLayout.setVerticalGroup(
             userPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -263,7 +268,9 @@ public class Smartphone extends javax.swing.JFrame {
                 .addComponent(nameLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
+                .addGap(31, 31, 31)
+                .addComponent(jLabel19)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jProgressBar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -564,6 +571,7 @@ public class Smartphone extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
