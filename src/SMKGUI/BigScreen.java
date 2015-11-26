@@ -116,6 +116,7 @@ public class BigScreen extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("The Art Game - Big screen");
+        setLocation(new java.awt.Point(3500, 200));
         setResizable(false);
         setSize(new java.awt.Dimension(1000, 600));
 
@@ -284,7 +285,6 @@ public class BigScreen extends javax.swing.JFrame {
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SMKGUI/btn_appstore.png"))); // NOI18N
 
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SMKGUI_pics/header_logo.png"))); // NOI18N
-        jLabel22.setText("jLabel22");
 
         javax.swing.GroupLayout bigQuestionPanelLayout = new javax.swing.GroupLayout(bigQuestionPanel);
         bigQuestionPanel.setLayout(bigQuestionPanelLayout);
@@ -621,7 +621,6 @@ public class BigScreen extends javax.swing.JFrame {
         getContentPane().add(bigMainPanel, java.awt.BorderLayout.CENTER);
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
 //    /**

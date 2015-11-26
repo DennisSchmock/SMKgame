@@ -132,22 +132,32 @@ public class Engine {
                     if (getCountUp() == countIntro + 100) {
                         smartphone.bigscreen.player1.setIcon(users.get(0).getPictureSmall());
                         smartphone.bigscreen.player1.setText(users.get(0).getName());
+                        backgroundMusic("src/SMKGUI_pics/pop.wav");
+
                     }
                     if (getCountUp() == countIntro + 150) {
                         smartphone.bigscreen.player2.setIcon(users.get(1).getPictureSmall());
                         smartphone.bigscreen.player2.setText(users.get(1).getName());
+                        backgroundMusic("src/SMKGUI_pics/pop.wav");
+
                     }
                     if (getCountUp() == countIntro + 300) {
                         smartphone.bigscreen.player3.setIcon(users.get(2).getPictureSmall());
                         smartphone.bigscreen.player3.setText(users.get(2).getName());
+                        backgroundMusic("src/SMKGUI_pics/pop.wav");
+
                     }
                     if (getCountUp() == countIntro + 400) {
                         smartphone.bigscreen.player4.setIcon(users.get(3).getPictureSmall());
                         smartphone.bigscreen.player4.setText(users.get(3).getName());
+                        backgroundMusic("src/SMKGUI_pics/pop.wav");
+
                     }
                     if (getCountUp() == countIntro + 430) {
                         smartphone.bigscreen.player5.setIcon(users.get(4).getPictureSmall());
                         smartphone.bigscreen.player5.setText(users.get(4).getName());
+                        backgroundMusic("src/SMKGUI_pics/pop.wav");
+
                     }
                     smartphone.userPanel();
                     smartphone.jProgressBar2.setMaximum(countUser);
@@ -396,10 +406,6 @@ public class Engine {
         Collections.reverse(users);
     }
 
-    private static void printScore() {
-        for (User user1 : users) {
-            System.out.println(user1.getName() + user1.getScore());
-        }
-    }
+   
 
 }
