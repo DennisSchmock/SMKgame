@@ -3,13 +3,15 @@ package Engine;
 import javax.swing.ImageIcon;
 
 public class Question {
-   private String question;
-   private String a1;
+   private String question; //The question
+   //Answeroption 1 - 4 here
+   private String a1; 
    private String a2;
    private String a3;
    private String a4;
-   private int correctAnswer;
-   private ImageIcon picture;
+   
+   private int correctAnswer;//The correct answer stored as an int between 1-4
+   private ImageIcon picture;//The picture of the question
    
    
 public Question(String q, String a1, String a2, String a3, String a4, ImageIcon pic, int correct){
@@ -23,7 +25,7 @@ public Question(String q, String a1, String a2, String a3, String a4, ImageIcon 
     
 }
 
-
+//Setters and getters below this point
     /**
      * @return the question
      */

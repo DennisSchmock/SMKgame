@@ -5,16 +5,16 @@ import javax.swing.ImageIcon;
 
 public class User {
 
-    private String name;
-    private ImageIcon picture;
-    private ImageIcon pictureSmall;
-    private Integer score;
-    private int tempAnswer;
+    private String name; //For storing the users name
+    private ImageIcon picture; //For storing the icon of the player
+    private ImageIcon pictureSmall; //For storing the smaller version of the players icon;
+    private Integer score; //For storing the players score
+    private int tempAnswer; //For storing the answer of the player when he presses an answerbutton
 
     public User() {
 
     }
-
+    //Constructor for setting nam and pictures of the player
     public User(String name, ImageIcon picture, ImageIcon pictureSmall) {
         this.name = name;
         this.picture = picture;
@@ -23,7 +23,7 @@ public class User {
     }
 
 
-
+//Setters and getters below this point.
     /**
      * @return the name
      */
