@@ -8,7 +8,7 @@ public class User {
     private String name;
     private ImageIcon picture;
     private ImageIcon pictureSmall;
-    private int score;
+    private Integer score;
     private int tempAnswer;
 
     public User() {
@@ -19,6 +19,7 @@ public class User {
         this.name = name;
         this.picture = picture;
         this.pictureSmall = pictureSmall;
+        this.score = 0;
     }
 
 
@@ -40,7 +41,7 @@ public class User {
     /**
      * @return the score
      */
-    public int getScore() {
+    public Integer getScore() {
         return score;
     }
 
@@ -63,6 +64,20 @@ public class User {
      */
     public void setTempAnswer(int tempAnswer) {
         this.tempAnswer = tempAnswer;
+    }
+
+    /**
+     * @return the pictureSmall
+     */
+    public ImageIcon getPictureSmall() {
+        return pictureSmall;
+    }
+
+    /**
+     * @param pictureSmall the pictureSmall to set
+     */
+    public void setPictureSmall(ImageIcon pictureSmall) {
+        this.pictureSmall = pictureSmall;
     }
     
     

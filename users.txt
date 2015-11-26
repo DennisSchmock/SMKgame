@@ -1,4 +1,4 @@
-Mona Lisa,Icon1.png,Icon1.png
+Mona Lisa,Icon1.png,Icon1 small.png
 Picasso,Icon2.png,Icon2 small.png
 Van Gogh,Icon3.png,Icon3 small.png
 Chagall,Icon4.png,Icon4 small.png

@@ -10,6 +10,8 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Random;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -18,16 +20,18 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javax.swing.JLabel;
 import javax.swing.Timer;
 
 public class Engine {
-    
+
     private static Timer timer;
     private static int countIntro = 200;
-    private static int countUser = 200;
-    private static int countAnswer = 300;
-    private static int countScore = 200;
-    private static int countRanking = 200;
+    private static int countUser = 500;
+    private static int countAnswer = 1600;
+    private static int countScore = 1000;
+    private static int countRanking = 500;
+    private static int drumRoll = 530;
     private static int numberQ = 5;
     private static int countUp;
     private static Question currentQuestion;
@@ -35,23 +39,27 @@ public class Engine {
     private static InputOutput io = new InputOutput();
     private static Smartphone smartphone;
     private static Clip clip;
+    private static ArrayList<User> users;
 
+    public static void resetGame() {
+        smartphone.bigscreen.dispose();
+        smartphone.dispose();
+        try {
+            String[] args = {""};
+
+            SMKmain.main(args);
+        } catch (Exception ex) {
+        }
+    }
 
     //Arraylisten hvor alle vores spørgsmål/svar ligger. 
-   // ArrayList<Question> questions = InputOutput.getQuestions();
+    // ArrayList<Question> questions = InputOutput.getQuestions();
+    public Engine(Smartphone sp, ArrayList<User> users) {
+        smartphone = sp;
+        this.users = users;
+        user = users.get(0);
 
-    //Bliver brugt hos randomQuestion
-    private static Random rnd = new Random();
-    private static Question lastShownQuestion;
-
-    //Hvor pointene bliver gemt midlertidigt.
-    private static int points = 0;
-
-public Engine(Smartphone sp, User u){
-    smartphone = sp;
-    user = u;
-    
-}
+    }
 
     public static boolean checkGuess(Question question, User user) {
         if (question.getCorrect() == user.getTempAnswer()) {
@@ -71,12 +79,6 @@ public Engine(Smartphone sp, User u){
     public static void setPoints(int p, User user) {
         user.setScore(p);
     }
-
-    public static int getPoints(User user) {
-        return points;
-    }
-
-  
 
     public static void setTempAnswer(int i, User user) {
         user.setTempAnswer(i);
@@ -112,7 +114,7 @@ public Engine(Smartphone sp, User u){
     public static void stopMusic() {
         clip.stop();
     }
-    
+
     public static void theTimer() {
 
         ActionListener actListner = new ActionListener() {
@@ -127,6 +129,26 @@ public Engine(Smartphone sp, User u){
                     smartphone.bigscreen.jProgressBar1.setValue(countIntro - getCountUp());
 
                 } else if (getCountUp() <= countUser + countIntro) {
+                    if (getCountUp() == countIntro + 100) {
+                        smartphone.bigscreen.player1.setIcon(users.get(0).getPictureSmall());
+                        smartphone.bigscreen.player1.setText(users.get(0).getName());
+                    }
+                    if (getCountUp() == countIntro + 150) {
+                        smartphone.bigscreen.player2.setIcon(users.get(1).getPictureSmall());
+                        smartphone.bigscreen.player2.setText(users.get(1).getName());
+                    }
+                    if (getCountUp() == countIntro + 300) {
+                        smartphone.bigscreen.player3.setIcon(users.get(2).getPictureSmall());
+                        smartphone.bigscreen.player3.setText(users.get(2).getName());
+                    }
+                    if (getCountUp() == countIntro + 400) {
+                        smartphone.bigscreen.player4.setIcon(users.get(3).getPictureSmall());
+                        smartphone.bigscreen.player4.setText(users.get(3).getName());
+                    }
+                    if (getCountUp() == countIntro + 430) {
+                        smartphone.bigscreen.player5.setIcon(users.get(4).getPictureSmall());
+                        smartphone.bigscreen.player5.setText(users.get(4).getName());
+                    }
                     smartphone.userPanel();
                     smartphone.jProgressBar2.setMaximum(countUser);
                     smartphone.jProgressBar2.setValue(countUser - (getCountUp() - countIntro));
@@ -158,6 +180,7 @@ public Engine(Smartphone sp, User u){
                         user.setTempAnswer(0);
                         stopMusic();
                         backgroundMusic("src/SMKGUI_pics/qsound.wav");
+
                     }
                 } else if (getCountUp() <= countUser + countIntro + countAnswer * 2) {
 
@@ -247,33 +270,36 @@ public Engine(Smartphone sp, User u){
                         checkGuess(currentQuestion, user);
                         user.setTempAnswer(0);
                         stopMusic();
+                        giveUsersRandomPoints();
+                        Engine.sortUsersScore();
+                        backgroundMusic("src/SMKGUI_pics/drumroll.wav");
 
                     }
 
                 } else if (getCountUp() <= countUser + countIntro + countAnswer * numberQ + countScore) {
+                    if (getCountUp() == countUser + countIntro + (countAnswer * 5) + drumRoll) {
+                        smartphone.bigscreen.WinnerIcon.setIcon(users.get(0).getPicture());
+                        smartphone.bigscreen.jLabel15.setText("Congratulations " + users.get(0).getName());
+                        smartphone.bigscreen.jLabel14.setText("With a score of " + users.get(0).getScore() + " / 5 correct answers.");
+                    }
+                    smartphone.scoreLabel.setText(user.getScore() + " / 5 correct answers");
 
                     smartphone.scorePanel();
                     smartphone.jProgressBar4.setMaximum(countUser);
                     smartphone.jProgressBar4.setValue(countUser - (getCountUp() - countIntro - countAnswer * numberQ - countScore));
-                    smartphone.scoreLabel.setText(user.getScore() + " / 5 correct answers");
-                    smartphone.bigscreen.jLabel14.setText("Congratulations " + user.getName());
-                    smartphone.bigscreen.jLabel15.setText("With a score of " + user.getScore() + " / 5 correct answers.");
 
                 } else if (getCountUp() <= countUser + countIntro + countAnswer * numberQ + countScore + countRanking) {
+                    if (getCountUp() == countUser + countIntro + countAnswer * numberQ + countScore + 100) {
+                        setRanks();
+                    }
                     smartphone.rankingPanel();
-                    smartphone.jProgressBar5.setMaximum(countUser);
-                    smartphone.jProgressBar5.setValue(countUser - (getCountUp() - countIntro - countAnswer * numberQ - countScore - countRanking));
 
                 } else if (getCountUp() > countUser + countIntro + countAnswer * numberQ + countScore + countRanking) {
-                    timer.stop();
-                    smartphone.bigscreen.dispose();
-                    smartphone.dispose();
-                    try {
-                        String[] args = {""};
+                    smartphone.bigscreen.bigCorrectAnswerPanel();
 
-                        SMKmain.main(args);
-                    } catch (Exception ex) {
-                    }
+                    timer.stop();
+                    setCorrectQA();
+
                 }
 
             }
@@ -282,6 +308,98 @@ public Engine(Smartphone sp, User u){
 
         timer = new Timer(10, actListner);
         timer.start();
+    }
+
+    public static void setCorrectQA() {
+        ArrayList<JLabel> jlabels = new ArrayList<>();
+        jlabels.add(smartphone.bigscreen.q1);
+        jlabels.add(smartphone.bigscreen.q2);
+        jlabels.add(smartphone.bigscreen.q3);
+        jlabels.add(smartphone.bigscreen.q4);
+        jlabels.add(smartphone.bigscreen.q5);
+        int i = 0;
+        for (JLabel jlabel : jlabels) {
+            jlabel.setText(InputOutput.getQuestions().get(i).getQuestion());
+            i++;
+        }
+        jlabels.clear();
+        jlabels.add(smartphone.bigscreen.a1);
+        jlabels.add(smartphone.bigscreen.a2);
+        jlabels.add(smartphone.bigscreen.a3);
+        jlabels.add(smartphone.bigscreen.a4);
+        jlabels.add(smartphone.bigscreen.a5);
+        i = 0;
+        for (JLabel jlabel : jlabels) {
+            if (InputOutput.getQuestions().get(i).getCorrect() == 1) {
+                jlabel.setText(InputOutput.getQuestions().get(i).getA1());
+            }
+            if (InputOutput.getQuestions().get(i).getCorrect() == 2) {
+                jlabel.setText(InputOutput.getQuestions().get(i).getA2());
+            }
+            if (InputOutput.getQuestions().get(i).getCorrect() == 3) {
+                jlabel.setText(InputOutput.getQuestions().get(i).getA3());
+            }
+            if (InputOutput.getQuestions().get(i).getCorrect() == 4) {
+                jlabel.setText(InputOutput.getQuestions().get(i).getA4());
+            }
+            i++;
+        }
+
+    }
+
+    public static void setRanks() {
+        ArrayList<JLabel> jlabels = new ArrayList<>();
+        jlabels.add(smartphone.bigscreen.rank1);
+        jlabels.add(smartphone.bigscreen.rank2);
+        jlabels.add(smartphone.bigscreen.rank3);
+        jlabels.add(smartphone.bigscreen.rank4);
+        jlabels.add(smartphone.bigscreen.rank5);
+        int i = 0;
+        for (JLabel jlabel : jlabels) {
+
+            jlabel.setText(users.get(i).getName());
+            jlabel.setIcon(users.get(i).getPictureSmall());
+            i++;
+        }
+        jlabels.clear();
+        jlabels.add(smartphone.bigscreen.score1);
+        jlabels.add(smartphone.bigscreen.score2);
+        jlabels.add(smartphone.bigscreen.score3);
+        jlabels.add(smartphone.bigscreen.score4);
+        jlabels.add(smartphone.bigscreen.score5);
+        i = 0;
+        for (JLabel jlabel : jlabels) {
+            jlabel.setText("" + users.get(i).getScore());
+            i++;
+        }
+
+    }
+
+    private static void giveUsersRandomPoints() {
+        Random rand = new Random();
+        users.get(1).setScore(rand.nextInt(6));
+        users.get(2).setScore(rand.nextInt(6));
+        users.get(3).setScore(rand.nextInt(6));
+        users.get(4).setScore(rand.nextInt(6));
+
+    }
+
+    private static void sortUsersScore() {
+        Collections.sort(users, new Comparator<User>() {
+            @Override
+            public int compare(User user1, User user2) {
+
+                return user1.getScore().compareTo(user2.getScore());
+            }
+
+        });
+        Collections.reverse(users);
+    }
+
+    private static void printScore() {
+        for (User user1 : users) {
+            System.out.println(user1.getName() + user1.getScore());
+        }
     }
 
 }

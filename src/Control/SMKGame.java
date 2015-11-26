@@ -60,4 +60,8 @@ public class SMKGame implements SMKGameInterface {
     public void startGame(){
         Engine.theTimer();
     }
+    
+    public void resetGame(){
+        Engine.resetGame();
+    }
 }
