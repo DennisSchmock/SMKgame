@@ -18,14 +18,14 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javax.swing.JLabel;
 import javax.swing.Timer;
 
 public class Engine {
 
     private static Timer timer;
+
+    //These variables control the flow of the game. Timer settings.
     private static int countIntro = 200;
     private static int countUser = 500;
     private static int countAnswer = 1600;
@@ -34,13 +34,14 @@ public class Engine {
     private static int drumRoll = 530;
     private static int numberQ = 5;
     private static int countUp;
-    private static Question currentQuestion;
-    private static User user;
+    private static Question currentQuestion; //We store the current question here
+    private static User user; //The user object
     private static InputOutput io = new InputOutput();
-    private static Smartphone smartphone;
-    private static Clip clip;
-    private static ArrayList<User> users;
+    private static Smartphone smartphone; //For controlling the GUI
+    private static Clip clip; //For storing the soundclip
+    private static ArrayList<User> users; //An array of users
 
+    //Method for starting a new game.
     public static void resetGame() {
         smartphone.bigscreen.dispose();
         smartphone.dispose();
@@ -52,15 +53,13 @@ public class Engine {
         }
     }
 
-    //Arraylisten hvor alle vores spørgsmål/svar ligger. 
-    // ArrayList<Question> questions = InputOutput.getQuestions();
     public Engine(Smartphone sp, ArrayList<User> users) {
         smartphone = sp;
         this.users = users;
         user = users.get(0);
-
     }
 
+    //This method is used for checking if the user guessed the correct answer.
     public static boolean checkGuess(Question question, User user) {
         if (question.getCorrect() == user.getTempAnswer()) {
             setPoints(user.getScore() + 1, user);
@@ -73,32 +72,13 @@ public class Engine {
         }
     }
 
-    /**
-     * @param points the points to set
-     */
-    public static void setPoints(int p, User user) {
-        user.setScore(p);
-    }
-
+    //These method sets the answer of the user.
     public static void setTempAnswer(int i, User user) {
         user.setTempAnswer(i);
 
     }
 
-    /**
-     * @return the countUp
-     */
-    public static int getCountUp() {
-        return countUp;
-    }
-
-    /**
-     * @param aCountUp the countUp to set
-     */
-    public static void setCountUp(int aCountUp) {
-        countUp = aCountUp;
-    }
-
+    //This method plays a wav file. Argument is the filename of a wav.
     public static void backgroundMusic(String filename) {
 
         try {
@@ -111,10 +91,12 @@ public class Engine {
         }
     }
 
+    //For stopping a sound
     public static void stopMusic() {
         clip.stop();
     }
 
+    //This method controls the flow of the game. It is control by a timer object. Hardcoded and static, but works.
     public static void theTimer() {
 
         ActionListener actListner = new ActionListener() {
@@ -122,12 +104,14 @@ public class Engine {
             @Override
             public void actionPerformed(ActionEvent event) {
                 setCountUp(getCountUp() + 1);
+                //Show introscreen on bigscreen and "smartphone".
                 if (getCountUp() <= countIntro) {
                     smartphone.jProgressBar1.setMaximum(countIntro);
                     smartphone.jProgressBar1.setValue(countIntro - getCountUp());
                     smartphone.bigscreen.jProgressBar1.setMaximum(countIntro);
                     smartphone.bigscreen.jProgressBar1.setValue(countIntro - getCountUp());
 
+                    //Show users joining. Simulating other users joining in.
                 } else if (getCountUp() <= countUser + countIntro) {
                     if (getCountUp() == countIntro + 100) {
                         smartphone.bigscreen.player1.setIcon(users.get(0).getPictureSmall());
@@ -171,6 +155,7 @@ public class Engine {
                         backgroundMusic("src/SMKGUI_pics/qsound.wav");
                     }
 
+                    //Show the Questions on the big screen and answeroptions on smartphone
                 } else if (getCountUp() <= countUser + countIntro + countAnswer) {
                     currentQuestion = InputOutput.getQuestions().get(0);
                     smartphone.answerPanel();
@@ -285,7 +270,7 @@ public class Engine {
                         backgroundMusic("src/SMKGUI_pics/drumroll.wav");
 
                     }
-
+                    //Show the winner on bigscreen and the users score on smartphone panel.
                 } else if (getCountUp() <= countUser + countIntro + countAnswer * numberQ + countScore) {
                     if (getCountUp() == countUser + countIntro + (countAnswer * 5) + drumRoll) {
                         smartphone.bigscreen.WinnerIcon.setIcon(users.get(0).getPicture());
@@ -297,13 +282,13 @@ public class Engine {
                     smartphone.scorePanel();
                     smartphone.jProgressBar4.setMaximum(countUser);
                     smartphone.jProgressBar4.setValue(countUser - (getCountUp() - countIntro - countAnswer * numberQ - countScore));
-
+                    //Show the ranking based on score
                 } else if (getCountUp() <= countUser + countIntro + countAnswer * numberQ + countScore + countRanking) {
                     if (getCountUp() == countUser + countIntro + countAnswer * numberQ + countScore + 100) {
                         setRanks();
                     }
                     smartphone.rankingPanel();
-
+                    //Show the answers to the questions.
                 } else if (getCountUp() > countUser + countIntro + countAnswer * numberQ + countScore + countRanking) {
                     smartphone.bigscreen.bigCorrectAnswerPanel();
 
@@ -311,15 +296,14 @@ public class Engine {
                     setCorrectQA();
 
                 }
-
             }
-
         };
 
         timer = new Timer(10, actListner);
         timer.start();
     }
-
+    
+    //This method displays the correct answers in the list
     public static void setCorrectQA() {
         ArrayList<JLabel> jlabels = new ArrayList<>();
         jlabels.add(smartphone.bigscreen.q1);
@@ -356,7 +340,7 @@ public class Engine {
         }
 
     }
-
+    //This method sets the ranks for the ranking panel
     public static void setRanks() {
         ArrayList<JLabel> jlabels = new ArrayList<>();
         jlabels.add(smartphone.bigscreen.rank1);
@@ -385,6 +369,7 @@ public class Engine {
 
     }
 
+    //For giving the four simulated users a random score
     private static void giveUsersRandomPoints() {
         Random rand = new Random();
         users.get(1).setScore(rand.nextInt(6));
@@ -394,6 +379,7 @@ public class Engine {
 
     }
 
+    //This method sorts the users arraylist based on their score
     private static void sortUsersScore() {
         Collections.sort(users, new Comparator<User>() {
             @Override
@@ -406,6 +392,26 @@ public class Engine {
         Collections.reverse(users);
     }
 
-   
+    //Setters and getters below this point
+    /**
+     * @param points the points to set
+     */
+    public static void setPoints(int p, User user) {
+        user.setScore(p);
+    }
+
+    /**
+     * @return the countUp
+     */
+    public static int getCountUp() {
+        return countUp;
+    }
+
+    /**
+     * @param aCountUp the countUp to set
+     */
+    public static void setCountUp(int aCountUp) {
+        countUp = aCountUp;
+    }
 
 }
