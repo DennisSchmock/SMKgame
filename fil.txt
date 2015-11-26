@@ -1,5 +1,8 @@
-When was the painting “De søgende” from?,1958,1920,2001,1467,Pic1.png,1
-What kind of art was there most of between 1900-1930 on the museum?,Europæisk kunst,Nordisk kunst,Fransk kunst,Dansk kunst,Pic2.png,3
-This image represents the portrait of?,Christian I,Christian II,Frederick I,Frederick II,Pic3.png,2
-Lucas Cranach the Elder painted a portrait of his German friend - who was it?,Martin Luther King,Angela Merkel,Martin Luther,Albert Einstein,Pic4.png,3
-In the painting by Emil Nolde Christ and his disciples are having The Last?,Meeting,Dinner,Praying,Supper,Pic5.png,4
+When was the painting “De søgende” painted?,1958,1920,2001,1467,Pic1.png,1
+What kind of art was represented the most in 1900-1930 on the museum?,Europæisk kunst,Nordisk kunst,Fransk kunst,Dansk kunst,Pic2.png,3
+Which famous person is in this picture?,Christian I,Christian II,Frederick I,Frederick II,Pic3.png,2
+Lucas Cranach the Elder painted this portrait of his German friend - who was it?,Martin Luther King,Angela Merkel,Martin Luther,Albert Einstein,Pic4.png,3
+In this painting by Emil Nolde Jesus and his disciples are having The Last?,Meeting,Dinner,Praying,Supper,Pic5.png,4
+Who painted this picture called “Manden der ser alt”?,Albert Einstein, Picasso,Vilhelm Lundstrøm, Edvard Munch,pic6.jpg,3
+This picture by Christen Købke is called: “Morning View of…”,Nørrebro,Østerbro,Amager,København,pic7.jpg,2
+This is a self-portrait of a very famous expressionist. Who?,Picasso,Degal,Matisse,Munch,pic8.jpg,3

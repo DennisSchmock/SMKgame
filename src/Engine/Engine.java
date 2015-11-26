@@ -27,8 +27,8 @@ public class Engine {
 
     //These variables control the flow of the game. Timer settings.
     private static int countIntro = 200;
-    private static int countUser = 500;
-    private static int countAnswer = 1600;
+    private static int countUser = 700;
+    private static int countAnswer = 100;
     private static int countScore = 1000;
     private static int countRanking = 500;
     private static int drumRoll = 530;

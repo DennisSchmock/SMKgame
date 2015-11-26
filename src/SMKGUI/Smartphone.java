@@ -32,7 +32,8 @@ public class Smartphone extends javax.swing.JFrame {
         mainPanel.add("scorePanel", scorePanel);
         mainPanel.add("rankingPanel", rankingPanel);
     }
-    public void resetButtons(){
+
+    public void resetButtons() {
         answerButtonA.setForeground(Color.BLACK);
         answerButtonB.setForeground(Color.BLACK);
         answerButtonC.setForeground(Color.BLACK);
@@ -476,12 +477,13 @@ public class Smartphone extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void answerButtonBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_answerButtonBActionPerformed
- 
+
         game.pushAnswerButton(2, user);
         answerButtonB.setForeground(Color.red);
         answerButtonD.setForeground(Color.LIGHT_GRAY);
         answerButtonC.setForeground(Color.LIGHT_GRAY);
         answerButtonA.setForeground(Color.LIGHT_GRAY);
+        Engine.backgroundMusic("src/SMKGUI_pics/button.wav");
     }//GEN-LAST:event_answerButtonBActionPerformed
 
     private void answerButtonAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_answerButtonAActionPerformed
@@ -490,6 +492,8 @@ public class Smartphone extends javax.swing.JFrame {
         answerButtonB.setForeground(Color.LIGHT_GRAY);
         answerButtonC.setForeground(Color.LIGHT_GRAY);
         answerButtonD.setForeground(Color.LIGHT_GRAY);
+        Engine.backgroundMusic("src/SMKGUI_pics/button.wav");
+
     }//GEN-LAST:event_answerButtonAActionPerformed
 
     private void answerButtonCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_answerButtonCActionPerformed
@@ -498,6 +502,8 @@ public class Smartphone extends javax.swing.JFrame {
         answerButtonB.setForeground(Color.LIGHT_GRAY);
         answerButtonA.setForeground(Color.LIGHT_GRAY);
         answerButtonD.setForeground(Color.LIGHT_GRAY);
+        Engine.backgroundMusic("src/SMKGUI_pics/button.wav");
+
     }//GEN-LAST:event_answerButtonCActionPerformed
 
     private void answerButtonDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_answerButtonDActionPerformed
@@ -506,6 +512,8 @@ public class Smartphone extends javax.swing.JFrame {
         answerButtonB.setForeground(Color.LIGHT_GRAY);
         answerButtonC.setForeground(Color.LIGHT_GRAY);
         answerButtonA.setForeground(Color.LIGHT_GRAY);
+        Engine.backgroundMusic("src/SMKGUI_pics/button.wav");
+
     }//GEN-LAST:event_answerButtonDActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
