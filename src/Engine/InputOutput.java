@@ -22,6 +22,7 @@ public class InputOutput {
         userLoad("users.txt");
     }
 
+    //The load method reads from a text file
     public boolean load(String filename) {
         questions = new ArrayList<>();
 
@@ -31,7 +32,7 @@ public class InputOutput {
             String s = r.readLine();
             while (s != null) {
 
-                // words a seperated by the comma in the textfile
+                // elements are seperated by the comma in the textfile
                 String q = s.split(",")[0].trim();
                 String a1 = s.split(",")[1].trim();
                 String a2 = s.split(",")[2].trim();
@@ -42,7 +43,7 @@ public class InputOutput {
                 int correct = parseInt(number);
 
                 ImageIcon pic = questionIcon(imagepath);
-                //the object, quiz, should consist of the strings from above
+                // the object is then created from the strings above. 
                 Question quest = new Question(q, a1, a2, a3, a4, pic, correct);
                 questions.add(quest);
                 s = r.readLine();
@@ -57,6 +58,7 @@ public class InputOutput {
         return true;
     }
 
+    //returns an ImageIcon and takes a String path as the parameter
     public ImageIcon questionIcon(String path) {
 
         java.net.URL imgURL = getClass().getResource(path);
@@ -68,6 +70,7 @@ public class InputOutput {
         }
     }
 
+    //similar to the other load method
     public boolean userLoad(String filename) {
         users = new ArrayList<>();
         try {
@@ -77,7 +80,7 @@ public class InputOutput {
 
             while (s != null) {
 
-                // words a seperated by the comma in the textfile
+                // elements are seperated by the comma in the textfile
                 String name = s.split(",")[0].trim();
                 String imagepath = "/SMKGUI_pics/" + s.split(",")[1].trim();
                 String imagepath2 = "/SMKGUI_pics/" + s.split(",")[2].trim();
@@ -96,19 +99,23 @@ public class InputOutput {
         return true;
 
     }
-
+   
+    //getter for the questions arrayList
     public static ArrayList<Question> getQuestions() {
         return questions;
     }
-
+    
+    //getter for the User arrayList
     public static ArrayList<User> loadUsers() {
         return users;
     }
 
+    //randomizes the arrayList for questions
     public static void shuffleQuestions() {
         Collections.shuffle(questions);
     }
 
+    //randomizes the arrayList for users
     public static void shuffleUsers() {
         Collections.shuffle(users);
     }
