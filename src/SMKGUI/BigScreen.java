@@ -621,6 +621,7 @@ public class BigScreen extends javax.swing.JFrame {
         getContentPane().add(bigMainPanel, java.awt.BorderLayout.CENTER);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
 //    /**
